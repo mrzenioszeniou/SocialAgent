@@ -23,8 +23,8 @@ export default class Main extends Component {
   static navigationOptions = function(props) {
     return({
       title: 'Feed',
-      headerLeft:
-          <TouchableOpacity onPress={ () => props.navigation.navigate("FeedComposer") }>
+      headerRight:
+          <TouchableOpacity onPress={ () => props.navigation.navigate("FeedComposer", {backPreCall: props.navigation.state.params.refreshFeed}) }>
             <Text style={styles.headerButton}>{'\uF044'}</Text>
           </TouchableOpacity>,
       headerStyle: styles.header,
@@ -58,6 +58,10 @@ export default class Main extends Component {
       console.log(error);
     }
     return;
+  }
+
+  componentDidMount() {
+    this.props.navigation.setParams({ refreshFeed: this.refreshFeed });
   }
 
   componentWillMount(){

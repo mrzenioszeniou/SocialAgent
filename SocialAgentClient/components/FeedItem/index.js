@@ -89,7 +89,7 @@ export default class FeedItem extends Component {
           </View>
           <View style={styles.content}>
             <Text style={styles.contentText}>{this.props.feed.text}</Text>
-              {this.props.feed.picture && <Image resizeMode={'stretch'} style={styles.picture} source={{uri: this.props.feed.picture}} />}
+              {this.props.feed.picture && <Image resizeMode={'contain'} style={styles.picture} source={{uri: this.props.feed.picture}} />}
           </View>
         </View>
       )
