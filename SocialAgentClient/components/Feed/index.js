@@ -10,6 +10,7 @@ import {
 import { StackNavigator } from 'react-navigation';
 import Main from './Main/';
 import FeedComposer from './FeedComposer/';
+import FeedPersonal from './FeedPersonal/';
 
 export default class Feed extends Component {
 
@@ -39,7 +40,10 @@ export default class Feed extends Component {
           },
           FeedComposer: {
             screen: FeedComposer,
-          }
+          },
+          FeedPersonal: {
+            screen: FeedPersonal,
+          },
         },{
           initialRouteName: 'Main',
           headerMode: 'screen'

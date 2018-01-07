@@ -17,8 +17,8 @@ export default class Main extends Component {
   constructor(props){
     super(props);
     this.state = {
-      active: true,
-      location: true,
+      active: null,
+      location: null,
       user: null,
     };
     this.refreshUser = this.refreshUser.bind(this);
@@ -40,27 +40,93 @@ export default class Main extends Component {
     this.setState({user: newUserObject});
   }
 
-  _handlePressStatus() {
-      this.setState({
-        active: !this.state.active,
-        location: !this.state.active && this.state.location,
-      });
-      var text = this.state.active?'online.':'offline.';
-      ToastAndroid.show('You are now '+text,ToastAndroid.SHORT);
+  async _handlePressStatus() {
+    const active = !this.state.active;
+    const location = !this.state.active && this.state.location;
+    const token = await AsyncStorage.getItem('@SocialAgent:token');
+    const server_address = await AsyncStorage.getItem('@SocialAgent:server-address');
+    const body = {
+      online: active,
+      discoverable: location
+    };
+    try{
+      let response = await fetch(
+        server_address+ 'me/',
+        {
+          method: 'PATCH',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': 'Token ' + token,
+          },
+          body: JSON.stringify(body)
+        });
+      if(!response.ok) {
+        ToastAndroid.show('Something went wrong..',ToastAndroid.SHORT);
+      }else{
+        let user = await response.json();
+        await AsyncStorage.setItem('@SocialAgent:user',JSON.stringify(user));
+        this.setState({
+          user: user,
+          active: active,
+          location: location,
+        });
+        let text = this.state.active?'online.':'offline.';
+        ToastAndroid.show('You are now '+text,ToastAndroid.SHORT);
+      }
+    }catch(error){
+      ToastAndroid.show('Something went wrong..'+text,ToastAndroid.SHORT);
+      console.log(error);
+    }
   }
 
-  _handlePressLocation() {
-      this.setState({
-        location: !this.state.location && this.state.active
-      });
-      var text =  this.state.location?'discoverable.':'undiscoverable.';
-      ToastAndroid.show('You are now '+text,ToastAndroid.SHORT);
+  async _handlePressLocation() {
+    if(!this.state.active) return;
+    const location = !this.state.location;
+    const token = await AsyncStorage.getItem('@SocialAgent:token');
+    const server_address = await AsyncStorage.getItem('@SocialAgent:server-address');
+    const body = {
+      discoverable: location
+    };
+    try{
+      let response = await fetch(
+        server_address+ 'me/',
+        {
+          method: 'PATCH',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': 'Token ' + token,
+          },
+          body: JSON.stringify(body)
+        });
+      if(!response.ok) {
+        ToastAndroid.show('Something went wrong..',ToastAndroid.SHORT);
+      }else{
+        let user = await response.json();
+        await AsyncStorage.setItem('@SocialAgent:user',JSON.stringify(user));
+        this.setState({
+          user: user,
+          location: location,
+        });
+        let text = this.state.location?'discoverable.':'not discoverable.';
+        ToastAndroid.show('You are now '+text,ToastAndroid.SHORT);
+      }
+    }catch(error){
+      ToastAndroid.show('Something went wrong..'+text,ToastAndroid.SHORT);
+      console.log(error);
+    }
   }
 
   async refreshUser(){
     try{
-      const user = await AsyncStorage.getItem('@SocialAgent:user');
-      this.setState({user: JSON.parse(user)});
+      const response = await AsyncStorage.getItem('@SocialAgent:user');
+      const user = await JSON.parse(response);
+      this.setState({
+        user: user,
+        active: user.online,
+        location: user.discoverable,
+      });
     }catch(error){
       console.error(error);
     }

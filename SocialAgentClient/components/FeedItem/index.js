@@ -95,7 +95,7 @@ export default class FeedItem extends Component {
       )
     }else{
       return (
-        <View style={{alignItems:'center',justifyContent:'center',flex:1,backgroundColor:'#f2f2f2'}}>
+        <View style={{alignItems:'center',justifyContent:'center',flex:1}}>
           <ActivityIndicator color={'#ff4d4d'}/>
         </View>
       );
@@ -107,10 +107,9 @@ export default class FeedItem extends Component {
 
 const styles = StyleSheet.create({
   picture: {
+    flex: 1,
     height: 250,
     width: null,
-    borderWidth: 1,
-    borderColor: '#e6e6e6'
   },
   activityAndLocation:{
     fontSize: 18,
@@ -131,14 +130,13 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     borderWidth: 1,
     borderColor: '#e6e6e6',
-    padding: 6
+    padding: 10,
   },
   title:{
     flexDirection: 'row'
   },
   content:{
     flexDirection: 'column',
-    padding: 12,
   },
   contentText: {
     marginBottom: 4,

@@ -23,9 +23,13 @@ export default class Main extends Component {
   static navigationOptions = function(props) {
     return({
       title: 'Feed',
-      headerRight:
+      headerLeft:
           <TouchableOpacity onPress={ () => props.navigation.navigate("FeedComposer", {backPreCall: props.navigation.state.params.refreshFeed}) }>
             <Text style={styles.headerButton}>{'\uF044'}</Text>
+          </TouchableOpacity>,
+      headerRight:
+          <TouchableOpacity onPress={ () => props.navigation.navigate("FeedPersonal", {backPreCall: props.navigation.state.params.refreshFeed})}>
+            <Text style={styles.headerButton}>{'\uF022'}</Text>
           </TouchableOpacity>,
       headerStyle: styles.header,
       headerTitleStyle: styles.headerTitle
@@ -52,7 +56,6 @@ export default class Main extends Component {
       }
       let responseJson = await response.json();
       this.setState({feed_list: responseJson});
-      console.log(responseJson);
     }catch(error){
       ToastAndroid.show('Something went wrong. Couldn\'t fetch feed.',ToastAndroid.SHORT);
       console.log(error);

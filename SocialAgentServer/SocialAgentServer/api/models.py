@@ -33,7 +33,8 @@ class User(AbstractUser):
     discover_distance = models.DecimalField(max_digits=7, decimal_places=3, default=9999.999)  # In KM
     discover_age_max = models.IntegerField(default=61)
     discover_age_min = models.IntegerField(default=18)
-
+    discoverable = models.BooleanField(default=True)
+    online = models.BooleanField(default=True)
     class Meta:
         ordering = ('id',)
 
@@ -55,7 +56,7 @@ class Feed(models.Model):
     )
     id = models.AutoField(primary_key=True)
     source = models.CharField(max_length=8,choices=SOURCE_CHOICES, default="Native")
-    user = models.ForeignKey(settings.AUTH_USER_MODEL)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='feed')
     activity = models.ForeignKey('Activity', default=1)
     longitude = models.DecimalField(max_digits=9, decimal_places=6,
                 null=True, blank=True)

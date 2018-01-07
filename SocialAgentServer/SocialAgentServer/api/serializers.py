@@ -36,9 +36,8 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         model = User
         # fields = ('url', 'username', 'first_name', 'last_name', 'avatar', 'dateOfBirth','following','followers',
         #           'activities')
-        fields = ('url', 'id', 'username', 'password', 'first_name', 'last_name', 'email', 'avatar', 'dateOfBirth',
-                  'latitude', 'longitude', 'following', 'followers', 'activities', 'discover_distance',
-                  'discover_age_max', 'discover_age_min')
+        fields = ('url', 'id', 'username', 'first_name', 'last_name', 'email', 'avatar', 'dateOfBirth',
+                  'latitude', 'longitude', 'following', 'followers', 'activities', 'online', 'discoverable')
 
 
 class CurrentUserSerializer(serializers.HyperlinkedModelSerializer):
@@ -49,4 +48,4 @@ class CurrentUserSerializer(serializers.HyperlinkedModelSerializer):
         model = User
         fields = ('url', 'id', 'username', 'password', 'first_name', 'last_name', 'email', 'avatar', 'dateOfBirth',
                   'latitude', 'longitude', 'following', 'followers', 'activities', 'discover_distance',
-                  'discover_age_max', 'discover_age_min')
+                  'discover_age_max', 'discover_age_min', 'feed', 'discoverable', 'online')

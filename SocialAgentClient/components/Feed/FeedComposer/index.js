@@ -156,6 +156,22 @@ export default class FeedComposer extends Component {
         ToastAndroid.show('Something went wrong..',ToastAndroid.SHORT);
         return;
       }
+      response = await fetch(
+        server_address + 'me/',
+        {
+          method: 'GET',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': 'Token ' + token,
+          }
+        });
+      if(!response.ok) {
+        ToastAndroid.show('Something went wrong..',ToastAndroid.SHORT);
+        return;
+      }
+      let user = await response.json();
+      await AsyncStorage.setItem('@SocialAgent:user',JSON.stringify(user));
       this.props.navigation.state.params.backPreCall();
       this.props.navigation.dispatch(NavigationActions.back());
     }catch(error){
