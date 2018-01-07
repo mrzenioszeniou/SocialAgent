@@ -37,7 +37,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         # fields = ('url', 'username', 'first_name', 'last_name', 'avatar', 'dateOfBirth','following','followers',
         #           'activities')
         fields = ('url', 'id', 'username', 'first_name', 'last_name', 'email', 'avatar', 'dateOfBirth',
-                  'latitude', 'longitude', 'following', 'followers', 'activities', 'online', 'discoverable')
+                  'latitude', 'longitude', 'following', 'followers', 'activities')
 
 
 class CurrentUserSerializer(serializers.HyperlinkedModelSerializer):

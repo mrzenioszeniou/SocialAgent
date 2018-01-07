@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {
   AsyncStorage,
+  ActivityIndicator,
   Image,
   ScrollView,
   StyleSheet,
@@ -239,8 +240,8 @@ export default class Main extends Component {
 
     );}else{
       return(
-        <View style={styles.mainContainer}>
-          <Text>Wait...</Text>
+        <View style={{alignItems:'center',justifyContent:'center',flex:1,backgroundColor:'#f2f2f2'}}>
+          <ActivityIndicator color={'#ff4d4d'}/>
         </View>
       );
     }

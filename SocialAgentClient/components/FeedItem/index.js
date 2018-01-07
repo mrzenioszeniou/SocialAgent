@@ -26,7 +26,7 @@ export default class FeedItem extends Component {
   async componentWillMount(){
     const server_address = await AsyncStorage.getItem('@SocialAgent:server-address');
     const token = await AsyncStorage.getItem('@SocialAgent:token');
-    const user = JSON.parse(await AsyncStorage.getItem('@SocialAgent:user'));
+    let user = JSON.parse(await AsyncStorage.getItem('@SocialAgent:user'));
     this.setState({
       latitude: user.latitude,
       longitude: user.longitude,
@@ -46,7 +46,7 @@ export default class FeedItem extends Component {
         ToastAndroid.show('Something went wrong. STATUS('+response.status+')',ToastAndroid.SHORT);
         return;
       }
-      const user = await response.json();
+      user = await response.json();
       response = await fetch(
         this.props.feed.activity,
         {

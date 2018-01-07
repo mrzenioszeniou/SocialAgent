@@ -6,6 +6,7 @@
 
 import React, { Component } from 'react';
 import {
+  ActivityIndicator,
   AppRegistry,
   AsyncStorage,
   Button,
@@ -13,6 +14,7 @@ import {
   Image,
   Picker,
   StyleSheet,
+  ScrollView,
   Text,
   TextInput,
   TouchableOpacity,
@@ -30,6 +32,7 @@ export default class SocialAgentClient extends Component {
   constructor (props) {
     super(props);
     this.state = {
+      isPageReady: false,
       accepted: false, // If true we render navigator
       authentication: 'login', // 'login' or 'register'
       user: null,
@@ -104,6 +107,7 @@ export default class SocialAgentClient extends Component {
     }catch(error){
       console.error(error);
     }
+    this.setState({isPageReady: true});
     return;
   }
 
@@ -263,6 +267,13 @@ export default class SocialAgentClient extends Component {
     return;
   }
 
+  _switchToLoginPage(){
+    this.setState({
+      authentication: 'login'
+    });
+    return;
+  }
+
   async _clearUser(){
     this.setState({
       user: null,
@@ -293,6 +304,13 @@ export default class SocialAgentClient extends Component {
   }
 
   render() {
+    if(!this.state.isPageReady){
+      return(
+        <View style={{alignItems:'center',justifyContent:'center',flex:1,backgroundColor:'#f2f2f2'}}>
+          <ActivityIndicator color={'#ff4d4d'}/>
+        </View>
+      );
+    }
     if(this.state.accepted){
       const TabNav = TabNavigator(
         {
@@ -376,7 +394,7 @@ export default class SocialAgentClient extends Component {
       );
     }else if (this.state.authentication=='register'){ // Account is not present. Prompt for registration
       return(
-        <View style={styles.container}>
+          <ScrollView contentContainerStyle={styles.container}>
             <Text style={styles.welcome}>Welcome to Social Agent!</Text>
             <Text style={styles.instructions}>
               Register for an account below.
@@ -441,7 +459,11 @@ export default class SocialAgentClient extends Component {
               color="#ff4d4d"
               onPress={() => {this._registerAccount();}}
             />
-        </View>
+            <Text
+              style={styles.subtext}
+              onPress={() => {this._switchToLoginPage();}}
+              >I already have an account.</Text>
+            </ScrollView>
       );
     }else{ // Should never reach this point
       return(
@@ -472,7 +494,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#f2f2f2',
   },
   welcome: {
     fontSize: 20,
