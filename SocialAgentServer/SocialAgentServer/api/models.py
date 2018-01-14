@@ -33,8 +33,8 @@ class User(AbstractUser):
     discover_distance = models.DecimalField(max_digits=7, decimal_places=3, default=9999.999)  # In KM
     discover_age_max = models.IntegerField(default=61)
     discover_age_min = models.IntegerField(default=18)
-    discoverable = models.BooleanField(default=True)
-    online = models.BooleanField(default=True)
+    discoverable = models.BooleanField(default=True) # TODO: Mutually followed discovers only
+    online = models.BooleanField(default=True) # TODO: 2-Way Connection Cut-Off
     class Meta:
         ordering = ('id',)
 
