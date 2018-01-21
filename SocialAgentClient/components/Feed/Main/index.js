@@ -79,7 +79,7 @@ export default class Main extends Component {
           <ScrollView>
             {
               this.state.feed_list.map(function(item, index){
-                return <FeedItem key={index} feed={item}/>;
+                return <FeedItem key={index} feed={item} refreshFeed={this.refreshFeed}/>;
               },this)
             }
           </ScrollView>

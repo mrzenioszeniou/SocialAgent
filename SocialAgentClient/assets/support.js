@@ -41,7 +41,7 @@ export function getElapsedTimeFromTimestamp(timestamp){
       return 'Just now'
       break;
     case (diff<3600):
-      return Math.floor(diff/60) + ' mins ago';
+      return Math.floor(diff/60) + ' min(s) ago';
       break;
     case (diff<86400):
       return Math.floor(diff/3600) + ' hour(s) ago';

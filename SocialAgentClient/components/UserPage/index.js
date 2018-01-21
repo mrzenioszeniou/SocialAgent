@@ -189,14 +189,6 @@ export default class UserPage extends Component {
                 </Text>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity onPress={ () => { }}>
-              <View style={styles.pokeButtonWrapper}>
-                <Text style={[styles.scrollItemMargin,styles.buttonText,
-                             {fontFamily: 'awesome',fontSize:28,
-                              fontWeight:'normal',color:'#0099ff'}]}>{'\uF003'}</Text>
-                <Text style={styles.followButtonText}>Message</Text>
-              </View>
-            </TouchableOpacity>
           </View>
           <View style={[styles.horizontalContainer,styles.scrollItemMargin]}>
             <Text style={[styles.itemTitle,{flex:1}]}>Activities:</Text>
