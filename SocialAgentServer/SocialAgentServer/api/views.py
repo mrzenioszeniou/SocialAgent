@@ -25,9 +25,12 @@ class UserViewSet(viewsets.ModelViewSet):
     def list(self, request, *args, **kwargs):
         if request.auth:
             user = request.user
-            queryset = [ u for u in User.objects.exclude(username__in=['admin',user.username]).exclude(followers=user)
+            if user.discoverable:
+                queryset = [ u for u in User.objects.exclude(username__in=['admin',user.username]).exclude(followers=user)
                                  if getDistanceFromLatLonInKm(user.latitude,user.longitude,u.latitude,u.longitude)
                                  <= user.discover_distance and u.discoverable]
+            else:
+                queryset = []
         else:
             queryset = User.objects.exclude(username='admin')
         serializer = UserSerializer(queryset,context={'request': request}, many=True)
@@ -37,6 +40,11 @@ class UserViewSet(viewsets.ModelViewSet):
         instance = serializer.save()
         instance.set_password(instance.password)
         instance.save()
+
+
+class ReactionViewSet(viewsets.ModelViewSet):
+    queryset = Reaction.objects.all()
+    serializer_class = ReactionSerializer
 
 
 class ActivityFollowViewSet(viewsets.ModelViewSet):
@@ -65,7 +73,10 @@ class FeedViewSet(viewsets.ModelViewSet):
     def list(self, request, *args, **kwargs):
         if request.auth:
             user = request.user
-            queryset = [f for f in Feed.objects.all() if (f.user in user.following.all() or f.user == user) and f.user.online]
+            if user.online:
+                queryset = [f for f in Feed.objects.all() if ((f.user in user.following.all() and f.user in user.followers.all() and f.user.online) or f.user == user)]
+            else:
+                queryset = [f for f in Feed.objects.all() if f.user == user]
         else:
             queryset = Feed.objects.all()
         serializer = FeedSerializer(queryset, context={'request': request}, many=True)

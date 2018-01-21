@@ -33,8 +33,8 @@ class User(AbstractUser):
     discover_distance = models.DecimalField(max_digits=7, decimal_places=3, default=9999.999)  # In KM
     discover_age_max = models.IntegerField(default=61)
     discover_age_min = models.IntegerField(default=18)
-    discoverable = models.BooleanField(default=True) # TODO: Mutually followed discovers only
-    online = models.BooleanField(default=True) # TODO: 2-Way Connection Cut-Off
+    discoverable = models.BooleanField(default=True)
+    online = models.BooleanField(default=True)
     class Meta:
         ordering = ('id',)
 
@@ -66,6 +66,12 @@ class Feed(models.Model):
     picture = models.ImageField(upload_to='feed/',null=True, blank=True)
     datetime = models.DateTimeField(auto_now_add=True)
 
+    def __unicode__(self):
+        return self.user.username + ':' +  (self.text[:8] + '..') if len(self.text) > 10 else self.text
+
+    class Meta:
+        ordering = ('datetime',)
+
 
 class ActivityFollow(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL)
@@ -74,6 +80,18 @@ class ActivityFollow(models.Model):
     class Meta:
         ordering = ('id',)
 
+
+class Reaction(models.Model):
+    TYPE_CHOICES = (
+        ("Like", "Like"),
+        ("Comment", "Comment")
+    )
+    id = models.AutoField(primary_key=True)
+    type = models.CharField(max_length=8, choices=TYPE_CHOICES, default='Like')
+    feed = models.ForeignKey('Feed', related_name='reactions')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='reactions')
+    datetime = models.DateTimeField(auto_now_add=True)
+    content = models.TextField(max_length=128, null=True, blank=True)
 
 @receiver(post_save, sender=settings.AUTH_USER_MODEL)
 def create_auth_token(sender, instance=None, created=False, **kwargs):

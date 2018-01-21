@@ -11,6 +11,7 @@ router.register(r'users', views.UserViewSet)
 router.register(r'activityfollows', views.ActivityFollowViewSet)
 router.register(r'follows', views.FollowViewSet)
 router.register(r'feed', views.FeedViewSet)
+router.register(r'reactions', views.ReactionViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls)),

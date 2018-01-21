@@ -21,10 +21,18 @@ class FollowSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('url','follower','followee','date')
 
 
+class ReactionSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Reaction
+        fields = ('url', 'user', 'feed', 'datetime', 'content', 'type')
+
+
 class FeedSerializer(serializers.HyperlinkedModelSerializer):
+    reactions = ReactionSerializer(many=True, read_only=True)
+
     class Meta:
         model = Feed
-        fields = ('url','id','source','user','activity','datetime','latitude','longitude','text','picture','source')
+        fields = ('url','id','source','user','activity','datetime','latitude','longitude','text','picture','source','reactions')
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -49,3 +57,4 @@ class CurrentUserSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('url', 'id', 'username', 'password', 'first_name', 'last_name', 'email', 'avatar', 'dateOfBirth',
                   'latitude', 'longitude', 'following', 'followers', 'activities', 'discover_distance',
                   'discover_age_max', 'discover_age_min', 'feed', 'discoverable', 'online')
+
