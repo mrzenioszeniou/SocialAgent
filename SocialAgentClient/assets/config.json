@@ -1,5 +1,6 @@
 {
-  "server-ip" : "192.168.1.2",
+  "server-ip" : "153.92.209.78",
+  "server-ip-wifi" : "192.168.1.2",
   "server-ip-emulator" : "10.0.2.2",
   "server-port" : "8000"
 }
