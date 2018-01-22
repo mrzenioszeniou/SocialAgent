@@ -15,7 +15,7 @@ class Activity(models.Model):
     description = models.CharField(max_length=100)
 
     class Meta:
-        ordering = ('id',)
+        ordering = ('name',)
 
     def __unicode__(self):
         return self.name

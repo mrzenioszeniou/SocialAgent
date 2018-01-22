@@ -79,6 +79,7 @@ export default class ActivityPicker extends Component  {
     }else{
       return(
         <View style={styles.mainContainer}>
+          <ScrollView>
           <View style={styles.followersList}>
             {
               this.state.activities.map(function(activity, index){
@@ -91,6 +92,7 @@ export default class ActivityPicker extends Component  {
               },this)
             }
           </View>
+          </ScrollView>
         </View>
       );
     }

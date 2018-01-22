@@ -3,6 +3,15 @@
 
     <item
         is-multidex="false"
+        jar="/home/zenios/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.4.1/63994437f62bc861bc20c605d12962f7246116d1/okhttp-urlconnection-3.4.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="63994437f62bc861bc20c605d12962f7246116d1">
+        <dex dex="/home/zenios/Desktop/Thesis/SocialAgentClient/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.4.1_4c3c80fcc123ad1d24403475fa7d7402435d81bf.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/zenios/Desktop/Thesis/SocialAgentClient/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/1.0.1/jars/classes.jar"
         jumboMode="false"
         optimize="true"
@@ -21,12 +30,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/zenios/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.4.1/63994437f62bc861bc20c605d12962f7246116d1/okhttp-urlconnection-3.4.1.jar"
+        jar="/home/zenios/Desktop/Thesis/SocialAgentClient/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/1.0.1/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="63994437f62bc861bc20c605d12962f7246116d1">
-        <dex dex="/home/zenios/Desktop/Thesis/SocialAgentClient/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.4.1_4c3c80fcc123ad1d24403475fa7d7402435d81bf.jar" />
+        sha1="d9c4402c3057225d80cbbbec52154e7a25b0ebdf">
+        <dex dex="/home/zenios/Desktop/Thesis/SocialAgentClient/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-1.0.1_c98d884c19c9ea277ed4a7f5aad2ff6cb947a635.jar" />
     </item>
     <item
         is-multidex="false"
@@ -36,69 +45,6 @@
         revision="23.0.1"
         sha1="a24c732feee7725fa991237a0c70fc4e9c204fc2">
         <dex dex="/home/zenios/Desktop/Thesis/SocialAgentClient/android/app/build/intermediates/pre-dexed/debug/SocialAgentClient-react-native-image-picker-unspecified_5ef6fea5315cb80f36c014e8b6cf64f70d00410e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zenios/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.4.1/c7c4f9e35c2fd5900da24f9872e3971801f08ce0/okhttp-3.4.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="c7c4f9e35c2fd5900da24f9872e3971801f08ce0">
-        <dex dex="/home/zenios/Desktop/Thesis/SocialAgentClient/android/app/build/intermediates/pre-dexed/debug/okhttp-3.4.1_a43a8a99bd6b7229915d240cb1fe8bf470aab484.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zenios/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="6975da39a7040257bd51d21a231b76c915872d38">
-        <dex dex="/home/zenios/Desktop/Thesis/SocialAgentClient/android/app/build/intermediates/pre-dexed/debug/javax.inject-1_95d3d2e3b82a14b60d9ed98d9dcab20e7f973b43.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zenios/Desktop/Thesis/SocialAgentClient/android/app/build/intermediates/exploded-aar/com.facebook.soloader/soloader/0.1.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
-        <dex dex="/home/zenios/Desktop/Thesis/SocialAgentClient/android/app/build/intermediates/pre-dexed/debug/com.facebook.soloader-soloader-0.1.0_e82a2e93ee531a245e73deb836fd66e6341c1abe.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zenios/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-ws/3.4.1/8ace66ef7002d98f633377c9e67daeeb196d8c3b/okhttp-ws-3.4.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="8ace66ef7002d98f633377c9e67daeeb196d8c3b">
-        <dex dex="/home/zenios/Desktop/Thesis/SocialAgentClient/android/app/build/intermediates/pre-dexed/debug/okhttp-ws-3.4.1_2c0b472eea151b1264ad307fe18523e94a3e3432.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zenios/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
-        <dex dex="/home/zenios/Desktop/Thesis/SocialAgentClient/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_952c521107dce143944e77fee9cfb19886482dbc.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zenios/Desktop/Thesis/SocialAgentClient/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/1.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="050f688115ea65a0292d8483a6ffe6bcdab1e2ef">
-        <dex dex="/home/zenios/Desktop/Thesis/SocialAgentClient/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-base-1.0.1_b2c58ef49c340d0e9d6851cd3695c7e2d4ed9487.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zenios/Desktop/Thesis/SocialAgentClient/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/1.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="d9c4402c3057225d80cbbbec52154e7a25b0ebdf">
-        <dex dex="/home/zenios/Desktop/Thesis/SocialAgentClient/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-1.0.1_c98d884c19c9ea277ed4a7f5aad2ff6cb947a635.jar" />
     </item>
     <item
         is-multidex="false"
@@ -129,6 +75,24 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/zenios/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.4.1/c7c4f9e35c2fd5900da24f9872e3971801f08ce0/okhttp-3.4.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c7c4f9e35c2fd5900da24f9872e3971801f08ce0">
+        <dex dex="/home/zenios/Desktop/Thesis/SocialAgentClient/android/app/build/intermediates/pre-dexed/debug/okhttp-3.4.1_a43a8a99bd6b7229915d240cb1fe8bf470aab484.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/zenios/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/home/zenios/Desktop/Thesis/SocialAgentClient/android/app/build/intermediates/pre-dexed/debug/javax.inject-1_95d3d2e3b82a14b60d9ed98d9dcab20e7f973b43.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/zenios/Desktop/Thesis/SocialAgentClient/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
         jumboMode="false"
         optimize="true"
@@ -147,12 +111,48 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/zenios/Desktop/Thesis/SocialAgentClient/android/app/build/intermediates/exploded-aar/com.facebook.soloader/soloader/0.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
+        <dex dex="/home/zenios/Desktop/Thesis/SocialAgentClient/android/app/build/intermediates/pre-dexed/debug/com.facebook.soloader-soloader-0.1.0_e82a2e93ee531a245e73deb836fd66e6341c1abe.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/zenios/Desktop/Thesis/SocialAgentClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
         <dex dex="/home/zenios/Desktop/Thesis/SocialAgentClient/android/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.0.1_dc0da0f7de6475ad23ac14c0b63298090cf938bd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/zenios/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-ws/3.4.1/8ace66ef7002d98f633377c9e67daeeb196d8c3b/okhttp-ws-3.4.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8ace66ef7002d98f633377c9e67daeeb196d8c3b">
+        <dex dex="/home/zenios/Desktop/Thesis/SocialAgentClient/android/app/build/intermediates/pre-dexed/debug/okhttp-ws-3.4.1_2c0b472eea151b1264ad307fe18523e94a3e3432.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/zenios/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/home/zenios/Desktop/Thesis/SocialAgentClient/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_952c521107dce143944e77fee9cfb19886482dbc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/zenios/Desktop/Thesis/SocialAgentClient/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/1.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="050f688115ea65a0292d8483a6ffe6bcdab1e2ef">
+        <dex dex="/home/zenios/Desktop/Thesis/SocialAgentClient/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-base-1.0.1_b2c58ef49c340d0e9d6851cd3695c7e2d4ed9487.jar" />
     </item>
     <item
         is-multidex="false"

@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/zenios/Desktop/Thesis/SocialAgentClient/android/app/build/intermediates/res/merged/release/xml/provider_paths.xml",
+        "source": "/home/zenios/Desktop/Thesis/SocialAgentClient/android/app/build/intermediates/exploded-aar/SocialAgentClient/react-native-image-picker/unspecified/res/xml/provider_paths.xml"
+    },
+    {
+        "merged": "/home/zenios/Desktop/Thesis/SocialAgentClient/android/app/build/intermediates/res/merged/release/xml/preferences.xml",
+        "source": "/home/zenios/Desktop/Thesis/SocialAgentClient/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.44.2/res/xml/preferences.xml"
+    }
+]
