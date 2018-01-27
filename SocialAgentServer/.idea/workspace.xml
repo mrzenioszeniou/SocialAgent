@@ -47,7 +47,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SocialAgentServer/api/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="452">
@@ -74,7 +74,7 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SocialAgentServer/api/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
+            <state relative-caret-position="-1044">
               <caret line="26" column="24" lean-forward="true" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
@@ -108,11 +108,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SocialAgentServer/SocialAgentServer/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="27" column="56" lean-forward="false" selection-start-line="27" selection-start-column="56" selection-end-line="27" selection-end-column="56" />
+            <state relative-caret-position="470">
+              <caret line="136" column="9" lean-forward="false" selection-start-line="136" selection-start-column="9" selection-end-line="136" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -151,12 +151,12 @@
         <option value="$PROJECT_DIR$/SocialAgentServer/api/__init__.py" />
         <option value="$PROJECT_DIR$/SocialAgentServer/api/signals.py" />
         <option value="$PROJECT_DIR$/SocialAgentServer/README.md" />
-        <option value="$PROJECT_DIR$/SocialAgentServer/SocialAgentServer/settings.py" />
         <option value="$PROJECT_DIR$/SocialAgentServer/api/urls.py" />
         <option value="$PROJECT_DIR$/SocialAgentServer/api/serializers.py" />
         <option value="$PROJECT_DIR$/SocialAgentServer/api/custom.py" />
         <option value="$PROJECT_DIR$/SocialAgentServer/api/models.py" />
         <option value="$PROJECT_DIR$/SocialAgentServer/api/views.py" />
+        <option value="$PROJECT_DIR$/SocialAgentServer/SocialAgentServer/settings.py" />
       </list>
     </option>
   </component>
@@ -962,14 +962,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SocialAgentServer/SocialAgentServer/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="56" lean-forward="false" selection-start-line="27" selection-start-column="56" selection-end-line="27" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SocialAgentServer/api/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -1000,7 +992,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SocialAgentServer/api/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
+        <state relative-caret-position="-1044">
           <caret line="26" column="24" lean-forward="true" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
@@ -1015,6 +1007,14 @@
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SocialAgentServer/SocialAgentServer/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="136" column="9" lean-forward="false" selection-start-line="136" selection-start-column="9" selection-end-line="136" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
