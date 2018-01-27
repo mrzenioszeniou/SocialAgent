@@ -37,6 +37,7 @@ class User(AbstractUser):
     online = models.BooleanField(default=True)
     class Meta:
         ordering = ('id',)
+        unique_together = ('email',)
 
 
 class Follow(models.Model):

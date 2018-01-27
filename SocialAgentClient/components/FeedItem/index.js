@@ -181,6 +181,15 @@ export default class FeedItem extends Component {
     return;
   }
 
+  _formattedName(){
+    let name = this.state.user.first_name + ' ' + this.state.user.last_name;
+    if(name.length > 16){
+      return name.slice(0,15) + '.';
+    }else{
+      return name;
+    }
+  }
+
   render() {
     if(this.state.user && this.state.activity){
       return(
@@ -189,7 +198,7 @@ export default class FeedItem extends Component {
             <Image style={styles.avatar} source={{uri: this.state.user.avatar}}/>
             <View style={{flexDirection:'column', padding: 4, flex:1, justifyContent:'space-between'}}>
               <View style={{flexDirection:'row', flex:1, justifyContent:'space-between', alignItems:'center'}}>
-                <Text style={styles.name}>{this.state.user.first_name} {this.state.user.last_name}</Text>
+                <Text style={styles.name}>{this._formattedName()}</Text>
                 <Text style={styles.time}>{getElapsedTimeFromTimestamp(this.props.feed.datetime)}</Text>
               </View>
               <Text style={styles.activityAndLocation}>{this.state.activity.name} @ {

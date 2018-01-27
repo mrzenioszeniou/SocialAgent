@@ -149,7 +149,7 @@ export default class Main extends Component {
         return (d-8)* 1.0
         break;
       default:
-        return 999.999;
+        return 9999.999;
         break;
     }
   }
@@ -220,7 +220,7 @@ export default class Main extends Component {
               <Slider
                 maximumValue={61}
                 minimumValue={18}
-                step={1}
+                step={3}
                 onValueChange={(value) => {this.setState({min_age: value});}}
                 value={this.state.min_age}
                 disabled={false}

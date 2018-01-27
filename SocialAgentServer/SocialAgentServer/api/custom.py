@@ -1,4 +1,4 @@
-import math, csv, random
+import math, csv, random, datetime
 from api.models import Activity
 
 
@@ -25,5 +25,7 @@ def addActivitiesFromCsv(filename):
         )
         activity.save()
 
+def getAgeFromDateOfBirth(dateOfBirth):
+    return (datetime.datetime.now().date() - dateOfBirth).days // 365.25
 
 

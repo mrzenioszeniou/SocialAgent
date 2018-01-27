@@ -2,7 +2,8 @@ from api.models import *
 from api.serializers import *
 from rest_framework import viewsets, status, mixins, generics
 from rest_framework.response import Response
-from custom import getDistanceFromLatLonInKm
+from rest_framework.permissions import AllowAny
+from custom import getDistanceFromLatLonInKm, getAgeFromDateOfBirth
 
 class ActivityViewSet(viewsets.ModelViewSet):
     queryset = Activity.objects.all()
@@ -27,8 +28,10 @@ class UserViewSet(viewsets.ModelViewSet):
             user = request.user
             if user.discoverable:
                 queryset = [ u for u in User.objects.exclude(username__in=['admin',user.username]).exclude(followers=user)
-                                 if getDistanceFromLatLonInKm(user.latitude,user.longitude,u.latitude,u.longitude)
-                                 <= user.discover_distance and u.discoverable]
+                    if getDistanceFromLatLonInKm(user.latitude,user.longitude,u.latitude,u.longitude) <= user.discover_distance
+                    and getDistanceFromLatLonInKm(user.latitude,user.longitude,u.latitude,u.longitude) <= u.discover_distance
+                     and u.discoverable and (user.discover_age_min <= getAgeFromDateOfBirth(u.dateOfBirth) <=
+                                                     (200 if user.discover_age_max == 61 else user.discover_age_max))]
             else:
                 queryset = []
         else:
@@ -86,6 +89,7 @@ class FeedViewSet(viewsets.ModelViewSet):
 class CurrentUserView(mixins.CreateModelMixin, generics.GenericAPIView,viewsets.ViewSet):
     queryset = User.objects.all()
     serializer_class = CurrentUserSerializer
+    permission_classes = (AllowAny,)
 
     def get(self, request):
         if request.auth:

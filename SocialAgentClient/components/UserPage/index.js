@@ -3,6 +3,7 @@ import { NavigationActions } from 'react-navigation';
 import {
   ActivityIndicator,
   AsyncStorage,
+  ScrollView,
   StyleSheet,
   Text,
   View,
@@ -153,6 +154,7 @@ export default class UserPage extends Component {
     if(this.state.user != null){
       return (
         <View style={styles.mainContainer}>
+          <ScrollView>
           <View style={styles.scrollItemMargin}>
             <Text style={styles.profileName}>{ this.state.person.first_name}
                {" "+this.state.person.last_name} {getAgeFromDateOfBirth(this.state.person.dateOfBirth)}</Text>
@@ -200,6 +202,7 @@ export default class UserPage extends Component {
               },this)
             }
           </View>
+        </ScrollView>
         </View>
       );
     }else{
