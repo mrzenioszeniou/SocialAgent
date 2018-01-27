@@ -21,7 +21,8 @@ export default class Main extends Component {
   constructor(props){
     super(props);
     this.state = {
-      done: false
+      done: false,
+      avatarChanged: false
     };
     this.updatePersonalInfo = this.updatePersonalInfo.bind(this);
     this.selectAvatar = this.selectAvatar.bind(this);
@@ -60,11 +61,13 @@ export default class Main extends Component {
       body.append('last_name', this.state.last_name);
       body.append('email', this.state.email);
       body.append('dateOfBirth', this.state.dateOfBirth);
-      body.append('avatar', {
-        uri: this.state.avatar.uri,
-        type: this.state.avatar.type, // or photo.type
-        name: this.state.avatar.name
-      });
+      if(this.state.avatarChanged){
+        body.append('avatar', {
+          uri: this.state.avatar.uri,
+          type: this.state.avatar.type, // or photo.type
+          name: this.state.avatar.name
+        });
+      }
       let response = await fetch(
         server_address+'me/',
         {
@@ -77,6 +80,7 @@ export default class Main extends Component {
           body: body
         });
       if(!response.ok) {
+        console.log(response.json());
         ToastAndroid.show('Something went wrong..',ToastAndroid.SHORT);
         return;
       }
@@ -85,6 +89,7 @@ export default class Main extends Component {
       this.props.navigation.state.params.backPreCall();
       this.props.navigation.dispatch(NavigationActions.back());
     }catch(error){
+      ToastAndroid.show('Something went wrong..',ToastAndroid.SHORT);
       console.error(error);
     }
     return;
@@ -121,6 +126,7 @@ export default class Main extends Component {
         // You can also display the image using data:
         // let source = { uri: 'data:image/jpeg;base64,' + response.data };
         this.setState({
+          avatarChanged: true,
           avatar: {
             uri: response.uri,
             type: response.type,
