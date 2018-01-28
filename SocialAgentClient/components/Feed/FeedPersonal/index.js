@@ -28,7 +28,7 @@ export default class FeedPersonal extends Component {
 
   static navigationOptions = function(props) {
     return({
-      title: 'My Feed',
+      title: 'My Feed Posts',
       headerLeft:
         <TouchableOpacity onPress={ () => {
           if ( "backPreCall" in props.navigation.state.params) {
@@ -146,7 +146,7 @@ export default class FeedPersonal extends Component {
               this.state.feed_list.map(function(item, index){
                 return (
                   <TouchableOpacity key={index} onLongPress={()=> this._removeFeed(item)}>
-                    <FeedItem key={index} feed={item}/>
+                    <FeedItem key={item.id} feed={item}/>
                   </TouchableOpacity>
                 );
               },this)

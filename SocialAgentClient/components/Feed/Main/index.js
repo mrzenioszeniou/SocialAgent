@@ -23,11 +23,14 @@ export default class Main extends Component {
   static navigationOptions = function(props) {
     return({
       title: 'Feed',
-      headerLeft:
-          <TouchableOpacity onPress={ () => props.navigation.navigate("FeedComposer", {backPreCall: props.navigation.state.params.refreshFeed}) }>
-            <Text style={styles.headerButton}>{'\uF044'}</Text>
-          </TouchableOpacity>,
       headerRight:
+          <TouchableOpacity onPress={ () => {
+            props.navigation.state.params.refreshFeed();
+            console.log('TouchablePressed');
+          }}>
+            <Text style={styles.headerButton}>{'\uF021'}</Text>
+          </TouchableOpacity>,
+      headerLeft:
           <TouchableOpacity onPress={ () => props.navigation.navigate("FeedPersonal", {backPreCall: props.navigation.state.params.refreshFeed})}>
             <Text style={styles.headerButton}>{'\uF022'}</Text>
           </TouchableOpacity>,
@@ -37,6 +40,7 @@ export default class Main extends Component {
   }
 
   async refreshFeed(){
+    console.log('refreshFeed called')
     const server_address = await AsyncStorage.getItem('@SocialAgent:server-address');
     const token = await AsyncStorage.getItem('@SocialAgent:token');
     try{
@@ -55,6 +59,7 @@ export default class Main extends Component {
         return;
       }
       let responseJson = await response.json();
+      this.setState({feed_list: []});
       this.setState({feed_list: responseJson});
     }catch(error){
       ToastAndroid.show('Something went wrong. Couldn\'t fetch feed.',ToastAndroid.SHORT);
@@ -77,9 +82,15 @@ export default class Main extends Component {
       return (
         <View style={styles.container}>
           <ScrollView>
+            <TouchableOpacity onPress={ () => this.props.navigation.navigate("FeedComposer", {backPreCall: this.props.navigation.state.params.refreshFeed}) }>
+              <View style={styles.newFeedContainer}>
+                <Text style={styles.newFeedIcon}>{'\uF044'}</Text>
+                <Text style={styles.newFeedText}>Post new feed..!</Text>
+              </View>
+            </TouchableOpacity>
             {
               this.state.feed_list.map(function(item, index){
-                return <FeedItem key={index} feed={item} refreshFeed={this.refreshFeed}/>;
+                return <FeedItem key={item.id} feed={item} refreshFeed={this.refreshFeed}/>;
               },this)
             }
           </ScrollView>
@@ -102,6 +113,26 @@ export default class Main extends Component {
 }
 
 const styles = StyleSheet.create({
+  newFeedContainer:{
+    borderWidth: 3,
+    borderColor: '#e6e6e6',
+    padding: 10,
+    flexDirection: 'row'
+  },
+  newFeedText:{
+    margin: 4,
+    fontSize: 18,
+    fontWeight: '500',
+    color: '#595959',
+    textAlignVertical: 'center'
+  },
+  newFeedIcon:{
+    margin: 4,
+    fontFamily: 'awesome',
+    fontSize: 32,
+    color: '#595959',
+    textAlignVertical: 'center'
+  },
   container: {
     flex: 1,
     backgroundColor: '#F5FCFF',

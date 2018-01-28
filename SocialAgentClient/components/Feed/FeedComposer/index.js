@@ -220,7 +220,10 @@ export default class FeedComposer extends Component {
             style={styles.pictureWrapper}
           >
             {   !this.state.picture &&
-                <Text>Attach a picture..</Text>
+              <View style={styles.picturePromptContainer}>
+                <Text style={styles.picturePromptIcon}>{'\uF083'}</Text>
+                <Text style={styles.picturePromptText}>Attach a picture..</Text>
+              </View>
             }
 
             { this.state.picture &&
@@ -247,6 +250,22 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 8,
   },
+  picturePromptContainer:{
+    flexDirection: 'row'
+  },
+  picturePromptIcon: {
+    margin: 4,
+    fontFamily: 'awesome',
+    fontSize: 26,
+    color: '#595959',
+    textAlignVertical: 'center'
+  },
+  picturePromptText:{
+    margin: 4,
+    fontSize: 16,
+    color: '#595959',
+    textAlignVertical: 'center'
+  },
   picker: {
     width: 200,
     borderWidth: 2,
@@ -265,7 +284,9 @@ const styles = StyleSheet.create({
     width: 300,
     height: 100,
     borderWidth: 1,
-    borderColor: '#cccccc'
+    borderColor: '#cccccc',
+    fontSize: 15,
+    color: '#595959',
   },
   headerButton: {
     margin: 4,
