@@ -71,7 +71,7 @@ class Feed(models.Model):
         return self.user.username + ':' +  (self.text[:8] + '..') if len(self.text) > 10 else self.text
 
     class Meta:
-        ordering = ('datetime',)
+        ordering = ('-datetime',)
 
 
 class ActivityFollow(models.Model):
