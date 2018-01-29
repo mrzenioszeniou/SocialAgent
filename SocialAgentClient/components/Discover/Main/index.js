@@ -74,7 +74,7 @@ export default class Main extends Component{
             <View style={styles.followersList}>
               {
                   this.state.people.map(function(person, index){
-                    return <UserIconLarge navigation={this.props.navigation} key={index} uri={person.url} backPreCall={this.refreshPeople}/>;
+                    return <UserIconLarge navigation={this.props.navigation} key={person.id} uri={person.url} backPreCall={this.refreshPeople}/>;
                   },this)
               }
             </View>
@@ -92,7 +92,7 @@ export default class Main extends Component{
       headerBackTitleStyle: styles.headerButton,
       headerLeft:
           <TouchableOpacity onPress={ () => props.navigation.navigate("Settings",{backPreCall: props.navigation.state.params.refreshPeople})}>
-            <Text style={styles.headerButton}>{'\uF0AE'}</Text>
+            <Text style={styles.headerButton}>{'\uF0B0'}</Text>
           </TouchableOpacity>,
       headerRight:
       <TouchableOpacity onPress={ () => props.navigation.state.params.refreshPeople()}>

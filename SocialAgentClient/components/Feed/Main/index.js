@@ -59,7 +59,6 @@ export default class Main extends Component {
         return;
       }
       let responseJson = await response.json();
-      this.setState({feed_list: []});
       this.setState({feed_list: responseJson});
     }catch(error){
       ToastAndroid.show('Something went wrong. Couldn\'t fetch feed.',ToastAndroid.SHORT);

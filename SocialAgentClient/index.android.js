@@ -201,8 +201,11 @@ export default class SocialAgentClient extends Component {
           body: body
         });
       if(!response.ok) {
-        console.log(await response.json());
-        ToastAndroid.show('Something went wrong. STATUS('+response.status+')',ToastAndroid.SHORT);
+        if(response.status === 400){
+          ToastAndroid.show('Username and/or email already registered. If you need a password reset contact the adminstrator.',ToastAndroid.LONG);
+        }else{
+          ToastAndroid.show('Something went wrong. "'+response.body+'"STATUS('+response.status+')',ToastAndroid.SHORT);
+        }
         return;
       }
       let user = await response.json();

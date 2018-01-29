@@ -27,7 +27,7 @@ export default class Main extends Component {
 
   static navigationOptions = function(props) {
     return({
-      title: 'Settings',
+      title: 'Filters',
       headerStyle: styles.header,
       headerTitleStyle: styles.headerTitle,
       headerBackTitleStyle: styles.headerButton,
