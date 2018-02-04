@@ -1,4 +1,4 @@
-#Mon Jan 29 00:15:03 CET 2018
+#Sun Feb 04 21:14:48 CET 2018
 base.0=/home/zenios/Desktop/Thesis/SocialAgentClient/android/app/build/intermediates/transforms/dex/release/folders/1000/1f/main
 renamed.0=classes.dex
 file.0=/home/zenios/Desktop/Thesis/SocialAgentClient/android/app/build/intermediates/transforms/dex/release/folders/1000/1f/main/classes.dex
