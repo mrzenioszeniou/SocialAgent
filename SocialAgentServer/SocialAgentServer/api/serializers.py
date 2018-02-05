@@ -52,9 +52,10 @@ class CurrentUserSerializer(serializers.HyperlinkedModelSerializer):
     activities = ActivityFollowSerializer(source='activityfollow_set', many=True, read_only=True)
     following = FollowSerializer(source='follows',many=True, read_only=True)
     followers = FollowSerializer(source='followed_by',many=True, read_only=True)
+    reactions = ReactionSerializer(many=True, read_only=True)
     class Meta:
         model = User
         fields = ('url', 'id', 'username', 'password', 'first_name', 'last_name', 'email', 'avatar', 'dateOfBirth',
                   'latitude', 'longitude', 'following', 'followers', 'activities', 'discover_distance',
-                  'discover_age_max', 'discover_age_min', 'feed', 'discoverable', 'online')
+                  'discover_age_max', 'discover_age_min', 'feed', 'discoverable', 'online', 'reactions')
 

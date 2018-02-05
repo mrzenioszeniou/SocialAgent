@@ -97,9 +97,20 @@ export default class Main extends Component {
       );
     }else if (this.state.feed_list!=null) {
       return (
-        <View style={{alignItems:'center',justifyContent:'center',flex:1,backgroundColor:'#f2f2f2'}}>
-          <Text>No feed items available.</Text>
+        <View style={styles.container}>
+          <ScrollView>
+            <TouchableOpacity onPress={ () => this.props.navigation.navigate("FeedComposer", {backPreCall: this.props.navigation.state.params.refreshFeed}) }>
+              <View style={styles.newFeedContainer}>
+                <Text style={styles.newFeedIcon}>{'\uF044'}</Text>
+                <Text style={styles.newFeedText}>Post new feed..!</Text>
+              </View>
+            </TouchableOpacity>
+            <View style={{alignItems:'center',justifyContent:'center',flex:1}}>
+              <Text>No feed items available.</Text>
+            </View>
+          </ScrollView>
         </View>
+
       );
     }else{
       return (

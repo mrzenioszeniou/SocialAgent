@@ -46,21 +46,36 @@ export default class FeedPersonal extends Component {
 
   async _refreshFeedData(){
     try{
-      const user = JSON.parse(await AsyncStorage.getItem('@SocialAgent:user'));
       const server_address = await AsyncStorage.getItem('@SocialAgent:server-address');
       const token = await AsyncStorage.getItem('@SocialAgent:token');
+      let response = await fetch(
+        server_address + 'me/',
+        {
+          method: 'GET',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': 'Token ' + token,
+          }
+        });
+      if(!response.ok) {
+        ToastAndroid.show('Something went wrong..',ToastAndroid.SHORT);
+        return;
+      }
+      let user = await response.json();
+      await AsyncStorage.setItem('@SocialAgent:user',JSON.stringify(user));
       let feed_list = [];
-      let response = null;
-      for(let i=0;i<user.feed.length;i++){
+      let feed_url_list =  Array.from(new Set(user.feed.concat(user.reactions.map(r => r.feed))));
+      for(let i=0;i<feed_url_list.length;i++){
         response = await fetch(
-          user.feed[i],
+          feed_url_list[i],
           {
             method: 'GET',
             headers: {
               'Accept': 'application/json',
               'Content-Type': 'application/json',
               'Authorization': 'Token ' + token,
-            },
+            }
           }
         );
         if(!response.ok){
@@ -143,7 +158,7 @@ export default class FeedPersonal extends Component {
         <View style={styles.container}>
           <ScrollView>
             {
-              this.state.feed_list.map(function(item, index){
+              this.state.feed_list.sort((a,b) => b.datetime > a.datetime ? 1 : -1).map(function(item, index){
                 return (
                   <TouchableOpacity key={index} onLongPress={()=> this._removeFeed(item)}>
                     <FeedItem key={item.id} feed={item}/>
