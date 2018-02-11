@@ -190,20 +190,26 @@ export default class Main extends Component {
                   <Image style={styles.avatar} source={{uri: this.state.user.avatar}}/>
                 </View>
                 <View style={[styles.followsContainer,styles.horizontalContainer,styles.scrollItemMargin]}>
-                  <TouchableOpacity onPress={ () => {this.props.navigation.navigate("Following", {
-                      followers: this.state.user.following,
-                      backPreCall: this.refreshUser
-                    });}}
+                  <TouchableOpacity onPress={ () => {
+                      this.refreshUser();
+                      this.props.navigation.navigate("Following", {
+                        followers: this.state.user.following,
+                        backPreCall: this.refreshUser
+                      });
+                    }}
                     style={{flex:1}}>
                     <View style={[styles.verticalContainer,{flex:1}]}>
                       <Text style={{textAlign:'center',color: '#1a1a1a',fontSize:16}}>Following</Text>
                       <Text style={{textAlign:'center',color: '#1a1a1a',fontSize:20}}>{this.state.user.following.length}</Text>
                     </View>
                   </TouchableOpacity>
-                  <TouchableOpacity onPress={ () => {this.props.navigation.navigate("Followers", {
-                      followers: this.state.user.followers,
-                      backPreCall: this.refreshUser
-                    });}}
+                  <TouchableOpacity onPress={ () => {
+                      this.refreshUser();
+                      this.props.navigation.navigate("Followers", {
+                        followers: this.state.user.followers,
+                        backPreCall: this.refreshUser
+                      });
+                    }}
                     style={{flex:1}}>
                     <View style={[styles.verticalContainer,{flex:1}]}>
                       <Text style={{textAlign:'center',color: '#1a1a1a',fontSize:16}}>Followers</Text>

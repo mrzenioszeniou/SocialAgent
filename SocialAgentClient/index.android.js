@@ -498,6 +498,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#f2f2f2',
+    marginTop: 12,
+    marginBottom: 12
   },
   welcome: {
     fontSize: 20,
