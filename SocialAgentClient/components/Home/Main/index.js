@@ -110,7 +110,7 @@ export default class Main extends Component {
           user: user,
           location: location,
         });
-        let text = this.state.location?'discoverable.':'not discoverable.';
+        let text = this.state.location?'visible.':'invisible.';
         ToastAndroid.show('You are now '+text,ToastAndroid.SHORT);
       }
     }catch(error){
@@ -191,12 +191,9 @@ export default class Main extends Component {
                 </View>
                 <View style={[styles.followsContainer,styles.horizontalContainer,styles.scrollItemMargin]}>
                   <TouchableOpacity onPress={ () => {
-                      this.refreshUser();
-                      this.props.navigation.navigate("Following", {
-                        followers: this.state.user.following,
-                        backPreCall: this.refreshUser
-                      });
-                    }}
+                    this.props.navigation.navigate("Following", {
+                      backPreCall: this.refreshUser
+                    });}}
                     style={{flex:1}}>
                     <View style={[styles.verticalContainer,{flex:1}]}>
                       <Text style={{textAlign:'center',color: '#1a1a1a',fontSize:16}}>Following</Text>
@@ -204,12 +201,9 @@ export default class Main extends Component {
                     </View>
                   </TouchableOpacity>
                   <TouchableOpacity onPress={ () => {
-                      this.refreshUser();
-                      this.props.navigation.navigate("Followers", {
-                        followers: this.state.user.followers,
-                        backPreCall: this.refreshUser
-                      });
-                    }}
+                    this.props.navigation.navigate("Followers", {
+                      backPreCall: this.refreshUser
+                    });}}
                     style={{flex:1}}>
                     <View style={[styles.verticalContainer,{flex:1}]}>
                       <Text style={{textAlign:'center',color: '#1a1a1a',fontSize:16}}>Followers</Text>
@@ -226,7 +220,7 @@ export default class Main extends Component {
                     this.state.user.activities.map(function(activity, index){
                       return <ActivityIcon
                               navigation={this.props.navigation}
-                              key={index}
+                              key={activity.activity}
                               uri={activity.activity}
                               backPreCall={this.refreshUser}
                             />;

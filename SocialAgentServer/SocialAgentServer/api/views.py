@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from rest_framework.permissions import AllowAny
 from custom import getDistanceFromLatLonInKm, getAgeFromDateOfBirth
 
-class ActivityViewSet(viewsets.ModelViewSet):
+class ActivityViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Activity.objects.all()
     serializer_class = ActivitySerializer
 
@@ -19,7 +19,7 @@ class ActivityViewSet(viewsets.ModelViewSet):
         return Response(serializer.data)
 
 
-class UserViewSet(viewsets.ModelViewSet):
+class UserViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = User.objects.exclude(username='admin')
     serializer_class = UserSerializer
 
@@ -30,8 +30,7 @@ class UserViewSet(viewsets.ModelViewSet):
                 queryset = [ u for u in User.objects.exclude(username__in=['admin',user.username]).exclude(followers=user)
                     if getDistanceFromLatLonInKm(user.latitude,user.longitude,u.latitude,u.longitude) <= user.discover_distance
                     and getDistanceFromLatLonInKm(user.latitude,user.longitude,u.latitude,u.longitude) <= u.discover_distance
-                     and u.discoverable and (user.discover_age_min <= getAgeFromDateOfBirth(u.dateOfBirth) <=
-                                                     (200 if user.discover_age_max == 61 else user.discover_age_max))]
+                     and u.discoverable and (user.discover_age_min <= getAgeFromDateOfBirth(u.dateOfBirth) <= user.discover_age_max)]
             else:
                 queryset = []
         else:
@@ -39,34 +38,20 @@ class UserViewSet(viewsets.ModelViewSet):
         serializer = UserSerializer(queryset,context={'request': request}, many=True)
         return Response(serializer.data)
 
-    def perform_create(self, serializer):
-        instance = serializer.save()
-        instance.set_password(instance.password)
-        instance.save()
 
-
-class ReactionViewSet(viewsets.ModelViewSet):
+class ReactionViewSet(mixins.RetrieveModelMixin, mixins.DestroyModelMixin, mixins.CreateModelMixin, viewsets.GenericViewSet):
     queryset = Reaction.objects.all()
     serializer_class = ReactionSerializer
 
 
-class ActivityFollowViewSet(viewsets.ModelViewSet):
+class ActivityFollowViewSet(mixins.RetrieveModelMixin, mixins.DestroyModelMixin, mixins.CreateModelMixin, viewsets.GenericViewSet):
     queryset = ActivityFollow.objects.all()
     serializer_class = ActivityFollowSerializer
 
 
-class FollowViewSet(viewsets.ModelViewSet):
+class FollowViewSet(mixins.RetrieveModelMixin, mixins.DestroyModelMixin, mixins.CreateModelMixin, viewsets.GenericViewSet):
     queryset = Follow.objects.all()
     serializer_class = FollowSerializer
-
-    def list(self, request, *args, **kwargs):
-        if request.auth:
-            user = request.user
-            queryset = Follow.objects.filter(follower=user) | Follow.objects.filter(followee=user)
-        else:
-            queryset = Follow.objects.all()
-        serializer = FollowSerializer(queryset,context={'request': request}, many=True)
-        return Response(serializer.data)
 
 
 class FeedViewSet(viewsets.ModelViewSet):
@@ -77,11 +62,15 @@ class FeedViewSet(viewsets.ModelViewSet):
         if request.auth:
             user = request.user
             if user.online:
-                queryset = [f for f in Feed.objects.all() if ((f.user in user.following.all() and f.user in user.followers.all() and f.user.online) or f.user == user)]
+                # The first commented line represents normal functionality. For testing purposes we ignore some functionality
+                # queryset = [f for f in Feed.objects.all() if ((f.user in user.following.all() and f.user in user.followers.all() and f.user.online) or f.user == user)]
+                queryset = [f for f in Feed.objects.all() if ((f.user in user.following.all() and f.user.online) or f.user == user)]
             else:
                 queryset = [f for f in Feed.objects.all() if f.user == user]
         else:
             queryset = Feed.objects.all()
+        if len(queryset) > 20:
+            queryset = queryset[0:20]
         serializer = FeedSerializer(queryset, context={'request': request}, many=True)
         return Response(serializer.data)
 

@@ -26,7 +26,6 @@ export default class Main extends Component {
       headerRight:
           <TouchableOpacity onPress={ () => {
             props.navigation.state.params.refreshFeed();
-            console.log('TouchablePressed');
           }}>
             <Text style={styles.headerButton}>{'\uF021'}</Text>
           </TouchableOpacity>,
@@ -89,7 +88,7 @@ export default class Main extends Component {
             </TouchableOpacity>
             {
               this.state.feed_list.map(function(item, index){
-                return <FeedItem key={item.id} feed={item} refreshFeed={this.refreshFeed}/>;
+                return <FeedItem key={item.url} feed={item} refreshFeed={this.refreshFeed}/>;
               },this)
             }
           </ScrollView>

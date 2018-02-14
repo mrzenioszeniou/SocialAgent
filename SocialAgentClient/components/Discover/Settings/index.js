@@ -221,8 +221,8 @@ export default class Main extends Component {
                 maximumValue={61}
                 minimumValue={18}
                 step={3}
-                onValueChange={(value) => {this.setState({min_age: value});}}
-                value={this.state.min_age}
+                onValueChange={(value) => {this.setState({min_age: value===61 ? 100 : value});}}
+                value={this.state.min_age > 60 ? 61 : this.state.min_age}
                 disabled={false}
                 style={{marginBottom: 10}}
               />

@@ -65,7 +65,8 @@ export default class FeedPersonal extends Component {
       let user = await response.json();
       await AsyncStorage.setItem('@SocialAgent:user',JSON.stringify(user));
       let feed_list = [];
-      let feed_url_list =  Array.from(new Set(user.feed.concat(user.reactions.map(r => r.feed))));
+      //let feed_url_list =  Array.from(new Set(user.feed.concat(user.reactions.filter(r => r.type==='Comment').map(r => r.feed))));
+      let feed_url_list =  Array.from(new Set(user.feed));
       for(let i=0;i<feed_url_list.length;i++){
         response = await fetch(
           feed_url_list[i],
@@ -101,6 +102,10 @@ export default class FeedPersonal extends Component {
       'Are you sure you want to delete this feed?',
       [
         {text: 'Delete', onPress: async () => {
+          if(feed_item.user !== this.state.user.url) {
+            ToastAndroid.show('Only the owner of a feed can delete it.', ToastAndroid.SHORT);
+            return;
+          }
           const server_address = await AsyncStorage.getItem('@SocialAgent:server-address');
           const token = await AsyncStorage.getItem('@SocialAgent:token');
           try{
@@ -160,8 +165,8 @@ export default class FeedPersonal extends Component {
             {
               this.state.feed_list.sort((a,b) => b.datetime > a.datetime ? 1 : -1).map(function(item, index){
                 return (
-                  <TouchableOpacity key={index} onLongPress={()=> this._removeFeed(item)}>
-                    <FeedItem key={item.id} feed={item}/>
+                  <TouchableOpacity key={item.url} onLongPress={()=> this._removeFeed(item)}>
+                    <FeedItem key={item.url} feed={item}/>
                   </TouchableOpacity>
                 );
               },this)

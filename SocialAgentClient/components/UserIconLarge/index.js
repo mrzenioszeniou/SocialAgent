@@ -84,12 +84,12 @@ const styles= StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     margin: 5,
-    width: 118,
+    width: 100,
   },
   followerAvatar: {
-    height: 118,
-    width: 118,
-    borderRadius: 64,
+    height: 100,
+    width: 100,
+    borderRadius: 50,
     borderWidth: 2,
     borderColor: '#404040'
   },

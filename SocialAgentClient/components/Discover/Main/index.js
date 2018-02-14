@@ -3,6 +3,7 @@ import {
   ActivityIndicator,
   AsyncStorage,
   InteractionManager,
+  ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -64,20 +65,22 @@ export default class Main extends Component{
         return(
           <View style={{alignItems:'center',justifyContent:'center',flex:1,backgroundColor:'#f2f2f2'}}>
             <Text>
-              No other users are nearby.
+              No other users nearby or your status is set to invisible.
             </Text>
           </View>
         );
       }else{
         return (
           <View style={styles.mainContainer}>
+            <ScrollView>
             <View style={styles.followersList}>
               {
                   this.state.people.map(function(person, index){
-                    return <UserIconLarge navigation={this.props.navigation} key={person.id} uri={person.url} backPreCall={this.refreshPeople}/>;
+                    return <UserIconLarge navigation={this.props.navigation} key={person.url} uri={person.url} backPreCall={this.refreshPeople}/>;
                   },this)
               }
             </View>
+            </ScrollView>
           </View>
         );
       }

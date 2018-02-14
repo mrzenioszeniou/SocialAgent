@@ -58,7 +58,7 @@ class Feed(models.Model):
     id = models.AutoField(primary_key=True)
     source = models.CharField(max_length=8,choices=SOURCE_CHOICES, default="Native")
     user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='feed')
-    activity = models.ForeignKey('Activity', default=1)
+    activity = models.ForeignKey('Activity', default=1, related_name='feed')
     longitude = models.DecimalField(max_digits=9, decimal_places=6,
                 null=True, blank=True)
     latitude = models.DecimalField(max_digits=9, decimal_places=6,

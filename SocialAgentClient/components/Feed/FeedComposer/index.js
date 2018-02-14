@@ -202,7 +202,7 @@ export default class FeedComposer extends Component {
             <Picker.Item label="Select Activity.." value='' />
             {
               this.state.activities_list.map(function(activity, index){
-                return <Picker.Item label={activity.name} value={activity.url} key={index}/>;
+                return <Picker.Item label={activity.name} value={activity.url} key={activity.url}/>;
               },this)
             }
           </Picker>

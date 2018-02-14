@@ -198,7 +198,7 @@ export default class UserPage extends Component {
           <View style={[styles.horizontalContainer,styles.scrollItemMargin,{flexWrap:'wrap'}]}>
             {
               this.state.person.activities.map(function(activity, index){
-                return <ActivityIcon navigation={this.props.navigation} key={index} uri={activity.activity}/>;
+                return <ActivityIcon navigation={this.props.navigation} key={activity.activity} uri={activity.activity}/>;
               },this)
             }
           </View>

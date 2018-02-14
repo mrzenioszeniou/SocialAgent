@@ -397,76 +397,78 @@ export default class SocialAgentClient extends Component {
       );
     }else if (this.state.authentication=='register'){ // Account is not present. Prompt for registration
       return(
-          <ScrollView contentContainerStyle={styles.container}>
-            <Text style={styles.welcome}>Welcome to Social Agent!</Text>
-            <Text style={styles.instructions}>
-              Register for an account below.
-            </Text>
-            <TextInput
-              style={styles.text_input}
-              placeholder={"Username"}
-              onChangeText={(text) => this.setState({register_field_username: text})}
-              value={this.state.register_field_username}
-            />
-            <TextInput
-              style={styles.text_input}
-              placeholder={"Password"}
-              secureTextEntry={true}
-              onChangeText={(text) => this.setState({register_field_password1: text})}
-              value={this.state.register_field_password1}
-            />
-            <TextInput
-              style={styles.text_input}
-              placeholder={"Repeat Password"}
-              secureTextEntry={true}
-              onChangeText={(text) => this.setState({register_field_password2: text})}
-              value={this.state.register_field_password2}
-            />
-            <TextInput
-              style={styles.text_input}
-              placeholder={"Name"}
-              onChangeText={(text) => this.setState({register_field_first_name: text})}
-              value={this.state.register_field_first_name}
-            />
-            <TextInput
-              style={styles.text_input}
-              placeholder={"Surname"}
-              onChangeText={(text) => this.setState({register_field_last_name: text})}
-              value={this.state.register_field_last_name}
-            />
-            <TextInput
-              keyboardType={'email-address'}
-              style={styles.text_input}
-              placeholder={"Email"}
-              onChangeText={(text) => this.setState({register_field_email: text})}
-              value={this.state.register_field_email}
-            />
-            <TouchableOpacity onPress={() => {this.changeDateOfBirth();}}>
+        <View style={styles.scrollOuterContainer}>
+            <ScrollView style={styles.scrollContainer} contentContainerStyle={styles.contentContainer}>
+              <Text style={styles.welcome}>Welcome to Social Agent!</Text>
+              <Text style={styles.instructions}>
+                Register for an account below.
+              </Text>
               <TextInput
-                editable={false}
-                style={[styles.text_input,{color: 'black'}]}
-                placeholder={"Date of Birth"}
-                onChangeText={(text) => {}}
-                value={this.state.register_field_dateOfBirth}
+                style={styles.text_input}
+                placeholder={"Username"}
+                onChangeText={(text) => this.setState({register_field_username: text})}
+                value={this.state.register_field_username}
               />
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => {this._selectAvatarFromGallery();}}>
-              <Image style={styles.avatar} source={{uri:
-                this.state.register_field_avatar_uri == ''
-                ? 'default_avatar'
-                : this.state.register_field_avatar_uri
-              }}/>
-            </TouchableOpacity>
-            <Button
-              title="Register"
-              color="#ff4d4d"
-              onPress={() => {this._registerAccount();}}
-            />
-            <Text
-              style={styles.subtext}
-              onPress={() => {this._switchToLoginPage();}}
-              >I already have an account.</Text>
+              <TextInput
+                style={styles.text_input}
+                placeholder={"Password"}
+                secureTextEntry={true}
+                onChangeText={(text) => this.setState({register_field_password1: text})}
+                value={this.state.register_field_password1}
+              />
+              <TextInput
+                style={styles.text_input}
+                placeholder={"Repeat Password"}
+                secureTextEntry={true}
+                onChangeText={(text) => this.setState({register_field_password2: text})}
+                value={this.state.register_field_password2}
+              />
+              <TextInput
+                style={styles.text_input}
+                placeholder={"Name"}
+                onChangeText={(text) => this.setState({register_field_first_name: text})}
+                value={this.state.register_field_first_name}
+              />
+              <TextInput
+                style={styles.text_input}
+                placeholder={"Surname"}
+                onChangeText={(text) => this.setState({register_field_last_name: text})}
+                value={this.state.register_field_last_name}
+              />
+              <TextInput
+                keyboardType={'email-address'}
+                style={styles.text_input}
+                placeholder={"Email"}
+                onChangeText={(text) => this.setState({register_field_email: text})}
+                value={this.state.register_field_email}
+              />
+              <TouchableOpacity onPress={() => {this.changeDateOfBirth();}}>
+                <TextInput
+                  editable={false}
+                  style={[styles.text_input,{color: 'black'}]}
+                  placeholder={"Date of Birth"}
+                  onChangeText={(text) => {}}
+                  value={this.state.register_field_dateOfBirth}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => {this._selectAvatarFromGallery();}}>
+                <Image style={styles.avatar} source={{uri:
+                  this.state.register_field_avatar_uri == ''
+                  ? 'default_avatar'
+                  : this.state.register_field_avatar_uri
+                }}/>
+              </TouchableOpacity>
+              <Button
+                title="Register"
+                color="#ff4d4d"
+                onPress={() => {this._registerAccount();}}
+              />
+              <Text
+                style={styles.subtext}
+                onPress={() => {this._switchToLoginPage();}}
+                >I already have an account.</Text>
             </ScrollView>
+            </View>
       );
     }else{ // Should never reach this point
       return(
@@ -498,8 +500,20 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#f2f2f2',
-    marginTop: 12,
-    marginBottom: 12
+  },
+  scrollOuterContainer: {
+    flex: 1,
+    flexDirection: 'row',
+  },
+  scrollContainer: {
+    flex:1,
+    paddingHorizontal: 5,
+    backgroundColor: '#f2f2f2',
+    flexDirection: 'column',
+  },
+  contentContainer: {
+    justifyContent:'center',
+    alignItems: 'center'
   },
   welcome: {
     fontSize: 20,

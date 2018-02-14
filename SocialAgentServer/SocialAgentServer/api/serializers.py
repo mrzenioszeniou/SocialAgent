@@ -6,7 +6,7 @@ from api.models import *
 class ActivitySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Activity
-        fields = ('url', 'id', 'charUnicode', 'color', 'name', 'description','followed')
+        fields = ('url', 'charUnicode', 'color', 'name', 'description','followed')
 
 
 class ActivityFollowSerializer(serializers.HyperlinkedModelSerializer):
@@ -32,7 +32,7 @@ class FeedSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Feed
-        fields = ('url','id','source','user','activity','datetime','latitude','longitude','text','picture','source','reactions')
+        fields = ('url','source','user','activity','datetime','latitude','longitude','text','picture','source','reactions')
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -44,7 +44,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         model = User
         # fields = ('url', 'username', 'first_name', 'last_name', 'avatar', 'dateOfBirth','following','followers',
         #           'activities')
-        fields = ('url', 'id', 'username', 'first_name', 'last_name', 'email', 'avatar', 'dateOfBirth',
+        fields = ('url', 'username', 'first_name', 'last_name', 'avatar', 'dateOfBirth',
                   'latitude', 'longitude', 'following', 'followers', 'activities')
 
 

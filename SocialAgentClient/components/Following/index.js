@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { NavigationActions } from 'react-navigation';
 import {
+  ActivityIndicator,
+  AsyncStorage,
   StyleSheet,
   ScrollView,
   Text,
@@ -12,6 +14,26 @@ import UserIcon from '../UserIcon/';
 
 
 export default class Following extends Component  {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      followers: null
+    };
+  }
+
+  async componentWillMount(){
+    try{
+      const response = await AsyncStorage.getItem('@SocialAgent:user');
+      const user = await JSON.parse(response);
+      this.setState({
+        followers: user.following
+      });
+    }catch(error){
+      console.error(error);
+    }
+    return;
+  }
 
   static navigationOptions = function(props) {
     return({
@@ -34,17 +56,27 @@ export default class Following extends Component  {
   }
 
   render() {
-    return(
-      <View style={styles.mainContainer}>
-        <View style={styles.followersList}>
-          {
-            this.props.navigation.state.params.followers.map(function(follower, index){
-              return <UserIcon navigation={this.props.navigation} key={index} uri={follower.followee}/>;
-            },this)
-          }
+    if(this.state.followers!==null){
+      return(
+        <View style={styles.mainContainer}>
+          <View style={styles.followersList}>
+            {
+              this.state.followers.map(function(follower, index){
+                return <UserIcon navigation={this.props.navigation} key={follower.followee} uri={follower.followee}/>;
+              },this)
+            }
+          </View>
         </View>
-      </View>
-    );
+      );
+    }else{
+      return(
+        <View style={{alignItems:'center',justifyContent:'center',flex:1,backgroundColor:'#f2f2f2'}}>
+          <ActivityIndicator color={'#ff4d4d'}/>
+        </View>
+      );
+    }
+
+
   }
 
 }

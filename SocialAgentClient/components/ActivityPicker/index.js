@@ -85,7 +85,7 @@ export default class ActivityPicker extends Component  {
               this.state.activities.map(function(activity, index){
                 return <ActivityIcon
                   navigation={this.props.navigation}
-                  key={index}
+                  key={activity.url}
                   uri={activity.url}
                   backPreCall={this.props.navigation.state.params.backPreCall}
                 />;
