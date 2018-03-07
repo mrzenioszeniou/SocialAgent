@@ -6,8 +6,6 @@ from django.dispatch import receiver
 from rest_framework.authtoken.models import Token
 
 
-
-
 class Activity(models.Model):
     charUnicode = models.CharField(max_length=6)
     color = models.CharField(max_length=7)
@@ -94,7 +92,9 @@ class Reaction(models.Model):
     datetime = models.DateTimeField(auto_now_add=True)
     content = models.TextField(max_length=128, null=True, blank=True)
 
+
 @receiver(post_save, sender=settings.AUTH_USER_MODEL)
 def create_auth_token(sender, instance=None, created=False, **kwargs):
     if created:
         Token.objects.create(user=instance)
+

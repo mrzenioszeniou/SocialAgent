@@ -15,6 +15,7 @@ import {
 import UserIcon from '../UserIcon/';
 
 export default class ActivityPage extends Component {
+
   constructor(props){
     super(props);
     this.state = {
@@ -124,7 +125,6 @@ export default class ActivityPage extends Component {
   }
 
   async componentWillMount() {
-
     try{
       const user = await AsyncStorage.getItem('@SocialAgent:user');
       var followed_activities = JSON.parse(user).activities;
@@ -202,7 +202,6 @@ export default class ActivityPage extends Component {
   }
 
 }
-
 
 const styles= StyleSheet.create({
   activityIcon: {

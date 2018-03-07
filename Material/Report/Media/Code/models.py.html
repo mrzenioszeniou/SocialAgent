@@ -1,0 +1,123 @@
+<html>
+<head>
+<title>models.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #999999; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(0,0,255); }
+.s3 { color: rgb(0,128,0); font-weight: bold; }
+.s4 { color: rgb(128,128,128); font-style: italic; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+models.py</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<a name="l1"><span class="ln">1    </span></a><span class="s0">from </span><span class="s1">django.db </span><span class="s0">import </span><span class="s1">models 
+<a name="l2"><span class="ln">2    </span></a></span><span class="s0">from </span><span class="s1">django.contrib.auth.models </span><span class="s0">import </span><span class="s1">AbstractUser 
+<a name="l3"><span class="ln">3    </span></a></span><span class="s0">from </span><span class="s1">django.conf </span><span class="s0">import </span><span class="s1">settings 
+<a name="l4"><span class="ln">4    </span></a></span><span class="s0">from </span><span class="s1">django.db.models.signals </span><span class="s0">import </span><span class="s1">post_save 
+<a name="l5"><span class="ln">5    </span></a></span><span class="s0">from </span><span class="s1">django.dispatch </span><span class="s0">import </span><span class="s1">receiver 
+<a name="l6"><span class="ln">6    </span></a></span><span class="s0">from </span><span class="s1">rest_framework.authtoken.models </span><span class="s0">import </span><span class="s1">Token 
+<a name="l7"><span class="ln">7    </span></a> 
+<a name="l8"><span class="ln">8    </span></a> 
+<a name="l9"><span class="ln">9    </span></a></span><span class="s0">class </span><span class="s1">Activity(models.Model): 
+<a name="l10"><span class="ln">10   </span></a>    charUnicode = models.CharField(max_length=</span><span class="s2">6</span><span class="s1">) 
+<a name="l11"><span class="ln">11   </span></a>    color = models.CharField(max_length=</span><span class="s2">7</span><span class="s1">) 
+<a name="l12"><span class="ln">12   </span></a>    name = models.CharField(max_length=</span><span class="s2">25</span><span class="s1">) 
+<a name="l13"><span class="ln">13   </span></a>    description = models.CharField(max_length=</span><span class="s2">100</span><span class="s1">) 
+<a name="l14"><span class="ln">14   </span></a> 
+<a name="l15"><span class="ln">15   </span></a>    </span><span class="s0">class </span><span class="s1">Meta: 
+<a name="l16"><span class="ln">16   </span></a>        ordering = (</span><span class="s3">'name'</span><span class="s1">,) 
+<a name="l17"><span class="ln">17   </span></a> 
+<a name="l18"><span class="ln">18   </span></a>    </span><span class="s0">def </span><span class="s1">__unicode__(self): 
+<a name="l19"><span class="ln">19   </span></a>        </span><span class="s0">return </span><span class="s1">self.name 
+<a name="l20"><span class="ln">20   </span></a> 
+<a name="l21"><span class="ln">21   </span></a> 
+<a name="l22"><span class="ln">22   </span></a></span><span class="s0">class </span><span class="s1">User(AbstractUser): 
+<a name="l23"><span class="ln">23   </span></a>    avatar = models.ImageField(upload_to=</span><span class="s3">'users/'</span><span class="s1">, default=</span><span class="s3">'users/default_avatar.png'</span><span class="s1">) 
+<a name="l24"><span class="ln">24   </span></a>    dateOfBirth = models.DateField(null=True, blank=True) 
+<a name="l25"><span class="ln">25   </span></a>    longitude = models.DecimalField(max_digits=</span><span class="s2">9</span><span class="s1">, decimal_places=</span><span class="s2">6</span><span class="s1">,null=True, blank=True) 
+<a name="l26"><span class="ln">26   </span></a>    latitude = models.DecimalField(max_digits=</span><span class="s2">9</span><span class="s1">, decimal_places=</span><span class="s2">6</span><span class="s1">,null=True, blank=True) 
+<a name="l27"><span class="ln">27   </span></a>    following = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name= </span><span class="s3">'followers'</span><span class="s1">, 
+<a name="l28"><span class="ln">28   </span></a>                through=</span><span class="s3">'Follow'</span><span class="s1">, through_fields=(</span><span class="s3">'follower'</span><span class="s1">, </span><span class="s3">'followee'</span><span class="s1">)) 
+<a name="l29"><span class="ln">29   </span></a>    activities = models.ManyToManyField(</span><span class="s3">'Activity'</span><span class="s1">, related_name= </span><span class="s3">'followed'</span><span class="s1">, 
+<a name="l30"><span class="ln">30   </span></a>                through=</span><span class="s3">'ActivityFollow'</span><span class="s1">, through_fields=(</span><span class="s3">'user'</span><span class="s1">,</span><span class="s3">'activity'</span><span class="s1">)) 
+<a name="l31"><span class="ln">31   </span></a>    discover_distance = models.DecimalField(max_digits=</span><span class="s2">7</span><span class="s1">, decimal_places=</span><span class="s2">3</span><span class="s1">, default=</span><span class="s2">9999.999</span><span class="s1">)  </span><span class="s4"># In KM</span><span class="s1"> 
+<a name="l32"><span class="ln">32   </span></a>    discover_age_max = models.IntegerField(default=</span><span class="s2">61</span><span class="s1">) 
+<a name="l33"><span class="ln">33   </span></a>    discover_age_min = models.IntegerField(default=</span><span class="s2">18</span><span class="s1">) 
+<a name="l34"><span class="ln">34   </span></a>    discoverable = models.BooleanField(default=True) 
+<a name="l35"><span class="ln">35   </span></a>    online = models.BooleanField(default=True) 
+<a name="l36"><span class="ln">36   </span></a>    </span><span class="s0">class </span><span class="s1">Meta: 
+<a name="l37"><span class="ln">37   </span></a>        ordering = (</span><span class="s3">'id'</span><span class="s1">,) 
+<a name="l38"><span class="ln">38   </span></a>        unique_together = (</span><span class="s3">'email'</span><span class="s1">,) 
+<a name="l39"><span class="ln">39   </span></a> 
+<a name="l40"><span class="ln">40   </span></a> 
+<a name="l41"><span class="ln">41   </span></a></span><span class="s0">class </span><span class="s1">Follow(models.Model): 
+<a name="l42"><span class="ln">42   </span></a>    follower = models.ForeignKey(settings.AUTH_USER_MODEL, related_name=</span><span class="s3">'follows'</span><span class="s1">) 
+<a name="l43"><span class="ln">43   </span></a>    followee = models.ForeignKey(settings.AUTH_USER_MODEL, related_name=</span><span class="s3">'followed_by'</span><span class="s1">) 
+<a name="l44"><span class="ln">44   </span></a>    date = models.DateField(auto_now_add=True) 
+<a name="l45"><span class="ln">45   </span></a> 
+<a name="l46"><span class="ln">46   </span></a>    </span><span class="s0">class </span><span class="s1">Meta: 
+<a name="l47"><span class="ln">47   </span></a>        ordering = (</span><span class="s3">'id'</span><span class="s1">,) 
+<a name="l48"><span class="ln">48   </span></a>        unique_together = ((</span><span class="s3">&quot;follower&quot;</span><span class="s1">, </span><span class="s3">&quot;followee&quot;</span><span class="s1">),) 
+<a name="l49"><span class="ln">49   </span></a> 
+<a name="l50"><span class="ln">50   </span></a> 
+<a name="l51"><span class="ln">51   </span></a></span><span class="s0">class </span><span class="s1">Feed(models.Model): 
+<a name="l52"><span class="ln">52   </span></a>    SOURCE_CHOICES = ( 
+<a name="l53"><span class="ln">53   </span></a>        (</span><span class="s3">&quot;Native&quot;</span><span class="s1">, </span><span class="s3">&quot;Native&quot;</span><span class="s1">), 
+<a name="l54"><span class="ln">54   </span></a>        (</span><span class="s3">&quot;Facebook&quot;</span><span class="s1">, </span><span class="s3">&quot;Facebook&quot;</span><span class="s1">) 
+<a name="l55"><span class="ln">55   </span></a>    ) 
+<a name="l56"><span class="ln">56   </span></a>    id = models.AutoField(primary_key=True) 
+<a name="l57"><span class="ln">57   </span></a>    source = models.CharField(max_length=</span><span class="s2">8</span><span class="s1">,choices=SOURCE_CHOICES, default=</span><span class="s3">&quot;Native&quot;</span><span class="s1">) 
+<a name="l58"><span class="ln">58   </span></a>    user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name=</span><span class="s3">'feed'</span><span class="s1">) 
+<a name="l59"><span class="ln">59   </span></a>    activity = models.ForeignKey(</span><span class="s3">'Activity'</span><span class="s1">, default=</span><span class="s2">1</span><span class="s1">, related_name=</span><span class="s3">'feed'</span><span class="s1">) 
+<a name="l60"><span class="ln">60   </span></a>    longitude = models.DecimalField(max_digits=</span><span class="s2">9</span><span class="s1">, decimal_places=</span><span class="s2">6</span><span class="s1">, 
+<a name="l61"><span class="ln">61   </span></a>                null=True, blank=True) 
+<a name="l62"><span class="ln">62   </span></a>    latitude = models.DecimalField(max_digits=</span><span class="s2">9</span><span class="s1">, decimal_places=</span><span class="s2">6</span><span class="s1">, 
+<a name="l63"><span class="ln">63   </span></a>                null=True, blank=True) 
+<a name="l64"><span class="ln">64   </span></a>    text = models.TextField(max_length=</span><span class="s2">256</span><span class="s1">,null=True, blank=True) 
+<a name="l65"><span class="ln">65   </span></a>    picture = models.ImageField(upload_to=</span><span class="s3">'feed/'</span><span class="s1">,null=True, blank=True) 
+<a name="l66"><span class="ln">66   </span></a>    datetime = models.DateTimeField(auto_now_add=True) 
+<a name="l67"><span class="ln">67   </span></a> 
+<a name="l68"><span class="ln">68   </span></a>    </span><span class="s0">def </span><span class="s1">__unicode__(self): 
+<a name="l69"><span class="ln">69   </span></a>        </span><span class="s0">return </span><span class="s1">self.user.username + </span><span class="s3">':' </span><span class="s1">+  (self.text[:</span><span class="s2">8</span><span class="s1">] + </span><span class="s3">'..'</span><span class="s1">) </span><span class="s0">if </span><span class="s1">len(self.text) &gt; </span><span class="s2">10 </span><span class="s0">else </span><span class="s1">self.text 
+<a name="l70"><span class="ln">70   </span></a> 
+<a name="l71"><span class="ln">71   </span></a>    </span><span class="s0">class </span><span class="s1">Meta: 
+<a name="l72"><span class="ln">72   </span></a>        ordering = (</span><span class="s3">'-datetime'</span><span class="s1">,) 
+<a name="l73"><span class="ln">73   </span></a> 
+<a name="l74"><span class="ln">74   </span></a> 
+<a name="l75"><span class="ln">75   </span></a></span><span class="s0">class </span><span class="s1">ActivityFollow(models.Model): 
+<a name="l76"><span class="ln">76   </span></a>    user = models.ForeignKey(settings.AUTH_USER_MODEL) 
+<a name="l77"><span class="ln">77   </span></a>    activity = models.ForeignKey(</span><span class="s3">'Activity'</span><span class="s1">) 
+<a name="l78"><span class="ln">78   </span></a> 
+<a name="l79"><span class="ln">79   </span></a>    </span><span class="s0">class </span><span class="s1">Meta: 
+<a name="l80"><span class="ln">80   </span></a>        ordering = (</span><span class="s3">'id'</span><span class="s1">,) 
+<a name="l81"><span class="ln">81   </span></a> 
+<a name="l82"><span class="ln">82   </span></a> 
+<a name="l83"><span class="ln">83   </span></a></span><span class="s0">class </span><span class="s1">Reaction(models.Model): 
+<a name="l84"><span class="ln">84   </span></a>    TYPE_CHOICES = ( 
+<a name="l85"><span class="ln">85   </span></a>        (</span><span class="s3">&quot;Like&quot;</span><span class="s1">, </span><span class="s3">&quot;Like&quot;</span><span class="s1">), 
+<a name="l86"><span class="ln">86   </span></a>        (</span><span class="s3">&quot;Comment&quot;</span><span class="s1">, </span><span class="s3">&quot;Comment&quot;</span><span class="s1">) 
+<a name="l87"><span class="ln">87   </span></a>    ) 
+<a name="l88"><span class="ln">88   </span></a>    id = models.AutoField(primary_key=True) 
+<a name="l89"><span class="ln">89   </span></a>    type = models.CharField(max_length=</span><span class="s2">8</span><span class="s1">, choices=TYPE_CHOICES, default=</span><span class="s3">'Like'</span><span class="s1">) 
+<a name="l90"><span class="ln">90   </span></a>    feed = models.ForeignKey(</span><span class="s3">'Feed'</span><span class="s1">, related_name=</span><span class="s3">'reactions'</span><span class="s1">) 
+<a name="l91"><span class="ln">91   </span></a>    user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name=</span><span class="s3">'reactions'</span><span class="s1">) 
+<a name="l92"><span class="ln">92   </span></a>    datetime = models.DateTimeField(auto_now_add=True) 
+<a name="l93"><span class="ln">93   </span></a>    content = models.TextField(max_length=</span><span class="s2">128</span><span class="s1">, null=True, blank=True) 
+<a name="l94"><span class="ln">94   </span></a> 
+<a name="l95"><span class="ln">95   </span></a> 
+<a name="l96"><span class="ln">96   </span></a>@receiver(post_save, sender=settings.AUTH_USER_MODEL) 
+<a name="l97"><span class="ln">97   </span></a></span><span class="s0">def </span><span class="s1">create_auth_token(sender, instance=None, created=False, **kwargs): 
+<a name="l98"><span class="ln">98   </span></a>    </span><span class="s0">if </span><span class="s1">created: 
+<a name="l99"><span class="ln">99   </span></a>        Token.objects.create(user=instance) 
+<a name="l100"><span class="ln">100  </span></a> 
+<a name="l101"><span class="ln">101  </span></a></span></pre>
+</body>
+</html>

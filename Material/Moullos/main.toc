@@ -1,0 +1,359 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {greek}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{ii}{section*.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{ii}{section*.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Περίληψη}{iii}{section*.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Abstract}{iv}{section*.4}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\select@language {greek}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Ευχαριστίες}{v}{section*.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{v}{section*.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{v}{section*.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{v}{section*.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{v}{section*.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {1}Εισαγωγή}{1}{chapter.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}Συστήματα Κοινής και Κατανεμημένης Μνήμης}{1}{section.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{1}{section*.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{1}{section*.14}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{2}{section*.16}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{2}{section*.17}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{2}{section*.18}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{3}{section*.19}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{3}{section*.20}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.2}Παράλληλα Προγραμματιστικά Μοντέλα}{3}{section.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{3}{section*.21}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.2.1}Μοντέλο κοινού χώρου διευθύνσεων}{3}{subsection.1.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{3}{section*.22}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.2.2}Μοντέλο Ανταλλαγής Μηνυμάτων}{3}{subsection.1.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{3}{section*.23}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{3}{section*.24}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{4}{section*.25}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{4}{section*.26}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.2.3}Υβριδικό Μοντέλο}{4}{subsection.1.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.3}Χρήση MPI για επικοινωνία σε κοινό χώρο διευθύνσεων}{4}{section.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{4}{section*.27}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{5}{section*.28}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{5}{section*.29}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{5}{section*.31}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{6}{section*.32}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{6}{section*.33}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.4}Κίνητρο}{6}{section.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{6}{section*.34}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{6}{section*.36}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{6}{section*.37}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{6}{section*.38}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{7}{section*.40}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{7}{section*.41}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{7}{section*.42}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.5}Σχετικές Εργασίες}{8}{section.1.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{8}{section*.43}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{8}{section*.44}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{9}{section*.45}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{9}{section*.46}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{9}{section*.47}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{9}{section*.48}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{10}{section*.49}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{10}{section*.50}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.6}Περιγραφή Μηχανήματος}{10}{section.1.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{10}{section*.51}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {2}Μοντελοποίηση}{11}{chapter.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{11}{section*.53}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}Μηχανική Μάθηση}{11}{section.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{11}{section*.54}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{11}{section*.55}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.1}Μέθοδοι για Regression}{11}{subsection.2.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{11}{section*.56}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{12}{section*.57}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.2}Μέθοδοι Ensemble}{12}{subsection.2.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{12}{section*.58}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.3}Αλγόριθμος Gradient Boosting Regression Tree}{12}{subsection.2.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{12}{section*.59}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{12}{section*.60}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{13}{section*.61}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.4}Επιλογή Χαρακτηριστικών}{13}{subsection.2.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{13}{section*.62}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.5}Μέθοδοι εξαγωγής Communication Patterns}{13}{subsection.2.1.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{13}{section*.63}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{13}{section*.64}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{14}{section*.65}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}Εξαγόμενες Μετρικές}{14}{section.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{14}{section*.66}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{14}{section*.67}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.1}Εξαγωγή Μετρικών Non-Blocking Επικοινωνίας}{14}{subsection.2.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{14}{section*.68}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{14}{section*.69}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{14}{section*.70}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{14}{section*.71}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{15}{section*.72}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{15}{section*.73}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Μετρικές με βάση τις παραμέτρους εκτέλεσης του MPI}{15}{section*.74}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Μετρικές με βάση το μοτίβο επικοινωνίας της εφαρμογής\\}{15}{section*.75}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Μετρικές με βάση την κατανομή των διεργασιών στο μηχάνημα και το μοτίβο επικοινωνίας\\}{15}{section*.76}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.2}Εξαγωγή Μετρικών Collective Επικοινωνίας}{16}{subsection.2.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{16}{section*.77}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{16}{section*.78}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{17}{section*.80}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{17}{section*.81}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Μετρικές με βάση τις παραμέτρους εκτέλεσης του MPI}{17}{section*.82}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Μετρικές με βάση το μοτίβο επικοινωνίας της εφαρμογής\\}{17}{section*.83}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Μετρικές με βάση την κατανομή των διεργασιών στο μηχάνημα και το μοτίβο επικοινωνίας\\}{18}{section*.84}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{19}{section*.85}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.3}Benchmarking}{19}{section.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.1}p2p\_SRR}{19}{subsection.2.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{19}{section*.86}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{19}{section*.87}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{19}{section*.88}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{20}{section*.90}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.2}p2p\_AS}{20}{subsection.2.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{20}{section*.91}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.3}NB\_SFR}{22}{subsection.2.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{22}{section*.95}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.4}Collective}{22}{subsection.2.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{22}{section*.97}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {3}Πειραματικά Αποτελέσματα Non-Blocking Επικοινωνίας}{25}{chapter.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}Εφαρμογές για εξαγωγή του συνόλου αξιολόγησης}{25}{section.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{25}{section*.99}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.1}3D-Jacobi}{25}{subsection.3.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{25}{section*.100}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.2}LULESH}{26}{subsection.3.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{26}{section*.103}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}Μετρικές Αξιολόγησης}{27}{section.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{27}{section*.105}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{27}{section*.106}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{27}{section*.107}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{27}{section*.108}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.3}Αποτελέσματα για την αρχιτεκτονική UMA}{28}{section.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{28}{section*.109}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3.1}Με δείγματα από το benchmark p2p\_SRR}{28}{subsection.3.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{28}{section*.110}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{28}{section*.111}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{28}{section*.113}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{28}{section*.114}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3.2}Με δείγματα από τα Benchmarks p2p\_SRR και p2p\_AS}{30}{subsection.3.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{30}{section*.116}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{30}{section*.118}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{30}{section*.119}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{30}{section*.121}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3.3}Με ρητή επιλογή χαρακτηριστικών}{31}{subsection.3.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{31}{section*.122}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{33}{section*.125}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.4}Αποτελέσματα για την αρχιτεκτονική NUMA}{33}{section.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{33}{section*.126}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.4.1}Με δείγματα από το benchmark p2p\_SRR}{33}{subsection.3.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{34}{section*.129}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{34}{section*.130}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.4.2}Με δείγματα από τα benchmark p2p\_SRR και p2p\_AS}{35}{subsection.3.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{35}{section*.131}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{35}{section*.132}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.4.3}Με ρητή επιλογή χαρακτηριστικών}{36}{subsection.3.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{36}{section*.136}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{37}{section*.138}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{37}{section*.139}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{39}{section*.142}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.5}Συνολική Αξιολόγηση}{39}{section.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{39}{section*.143}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{39}{section*.146}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{39}{section*.147}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}Πειραματικά Αποτελέσματα Collective Επικοινωνίας}{41}{chapter.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}Scatter}{41}{section.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{41}{section*.148}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{41}{section*.149}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{42}{section*.150}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{43}{section*.153}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Broadcast}{44}{section.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.3}Αllreduce}{47}{section.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{47}{section*.160}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{47}{section*.161}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.4}Συγκεντρωτικά Αποτελέσματα για τα υπόλοιπα collectives}{49}{section.4.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.5}Αποτελέσματα εφαρμογής LULESH}{50}{section.4.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{50}{section*.168}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.5.1}Αρχιτεκτονική UMA}{50}{subsection.4.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{50}{section*.169}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.5.2}Αρχιτεκτονική NUMA}{51}{subsection.4.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.6}Σύγκριση αποτελεσμάτων με βάση την απεικόνιση των διεργασιών στους πόρους}{52}{section.4.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{52}{section*.172}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{53}{section*.173}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{53}{section*.174}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Συμπεράσματα και Μελλοντικές Επεκτάσεις }{55}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{55}{section*.177}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{55}{section*.178}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{56}{section*.179}

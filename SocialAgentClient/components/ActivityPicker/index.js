@@ -12,7 +12,6 @@ import {
 } from 'react-native';
 import ActivityIcon from '../ActivityIcon/';
 
-
 export default class ActivityPicker extends Component  {
 
   constructor(props){

@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   ActivityIndicator,
@@ -26,7 +20,6 @@ import Home from './components/Home/';
 import Discover from './components/Discover/';
 import Feed from './components/Feed/';
 import config from './assets/config.json';
-
 
 export default class SocialAgentClient extends Component {
   constructor (props) {
@@ -480,9 +473,6 @@ export default class SocialAgentClient extends Component {
         </View>
       );
     }
-
-
-
   }
 }
 
@@ -538,7 +528,5 @@ const styles = StyleSheet.create({
     fontSize: 15
   }
 });
-
-
 
 AppRegistry.registerComponent('SocialAgentClient', () => SocialAgentClient);

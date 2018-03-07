@@ -1,0 +1,52 @@
+\BOOKMARK [0][-]{section*.3}{Περίληψη}{}% 1
+\BOOKMARK [0][-]{section*.4}{Abstract}{}% 2
+\BOOKMARK [0][-]{section*.5}{Ευχαριστίες}{}% 3
+\BOOKMARK [0][-]{chapter.1}{Εισαγωγή}{}% 4
+\BOOKMARK [1][-]{section.1.1}{Συστήματα Κοινής και Κατανεμημένης Μνήμης}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.2}{Παράλληλα Προγραμματιστικά Μοντέλα}{chapter.1}% 6
+\BOOKMARK [2][-]{subsection.1.2.1}{Μοντέλο κοινού χώρου διευθύνσεων}{section.1.2}% 7
+\BOOKMARK [2][-]{subsection.1.2.2}{Μοντέλο Ανταλλαγής Μηνυμάτων}{section.1.2}% 8
+\BOOKMARK [2][-]{subsection.1.2.3}{Υβριδικό Μοντέλο}{section.1.2}% 9
+\BOOKMARK [1][-]{section.1.3}{Χρήση MPI για επικοινωνία σε κοινό χώρο διευθύνσεων}{chapter.1}% 10
+\BOOKMARK [1][-]{section.1.4}{Κίνητρο}{chapter.1}% 11
+\BOOKMARK [1][-]{section.1.5}{Σχετικές Εργασίες}{chapter.1}% 12
+\BOOKMARK [1][-]{section.1.6}{Περιγραφή Μηχανήματος}{chapter.1}% 13
+\BOOKMARK [0][-]{chapter.2}{Μοντελοποίηση}{}% 14
+\BOOKMARK [1][-]{section.2.1}{Μηχανική Μάθηση}{chapter.2}% 15
+\BOOKMARK [2][-]{subsection.2.1.1}{Μέθοδοι για Regression}{section.2.1}% 16
+\BOOKMARK [2][-]{subsection.2.1.2}{Μέθοδοι Ensemble}{section.2.1}% 17
+\BOOKMARK [2][-]{subsection.2.1.3}{Αλγόριθμος Gradient Boosting Regression Tree}{section.2.1}% 18
+\BOOKMARK [2][-]{subsection.2.1.4}{Επιλογή Χαρακτηριστικών}{section.2.1}% 19
+\BOOKMARK [2][-]{subsection.2.1.5}{Μέθοδοι εξαγωγής Communication Patterns}{section.2.1}% 20
+\BOOKMARK [1][-]{section.2.2}{Εξαγόμενες Μετρικές}{chapter.2}% 21
+\BOOKMARK [2][-]{subsection.2.2.1}{Εξαγωγή Μετρικών Non-Blocking Επικοινωνίας}{section.2.2}% 22
+\BOOKMARK [2][-]{subsection.2.2.2}{Εξαγωγή Μετρικών Collective Επικοινωνίας}{section.2.2}% 23
+\BOOKMARK [1][-]{section.2.3}{Benchmarking}{chapter.2}% 24
+\BOOKMARK [2][-]{subsection.2.3.1}{p2p_SRR}{section.2.3}% 25
+\BOOKMARK [2][-]{subsection.2.3.2}{p2p_AS}{section.2.3}% 26
+\BOOKMARK [2][-]{subsection.2.3.3}{NB_SFR}{section.2.3}% 27
+\BOOKMARK [2][-]{subsection.2.3.4}{Collective}{section.2.3}% 28
+\BOOKMARK [0][-]{chapter.3}{Πειραματικά Αποτελέσματα Non-Blocking Επικοινωνίας}{}% 29
+\BOOKMARK [1][-]{section.3.1}{Εφαρμογές για εξαγωγή του συνόλου αξιολόγησης}{chapter.3}% 30
+\BOOKMARK [2][-]{subsection.3.1.1}{3D-Jacobi}{section.3.1}% 31
+\BOOKMARK [2][-]{subsection.3.1.2}{LULESH}{section.3.1}% 32
+\BOOKMARK [1][-]{section.3.2}{Μετρικές Αξιολόγησης}{chapter.3}% 33
+\BOOKMARK [1][-]{section.3.3}{Αποτελέσματα για την αρχιτεκτονική UMA}{chapter.3}% 34
+\BOOKMARK [2][-]{subsection.3.3.1}{Με δείγματα από το benchmark p2p_SRR}{section.3.3}% 35
+\BOOKMARK [2][-]{subsection.3.3.2}{Με δείγματα από τα Benchmarks p2p_SRR και p2p_AS}{section.3.3}% 36
+\BOOKMARK [2][-]{subsection.3.3.3}{Με ρητή επιλογή χαρακτηριστικών}{section.3.3}% 37
+\BOOKMARK [1][-]{section.3.4}{Αποτελέσματα για την αρχιτεκτονική NUMA}{chapter.3}% 38
+\BOOKMARK [2][-]{subsection.3.4.1}{Με δείγματα από το benchmark p2p_SRR}{section.3.4}% 39
+\BOOKMARK [2][-]{subsection.3.4.2}{Με δείγματα από τα benchmark p2p_SRR και p2p_AS}{section.3.4}% 40
+\BOOKMARK [2][-]{subsection.3.4.3}{Με ρητή επιλογή χαρακτηριστικών}{section.3.4}% 41
+\BOOKMARK [1][-]{section.3.5}{Συνολική Αξιολόγηση}{chapter.3}% 42
+\BOOKMARK [0][-]{chapter.4}{Πειραματικά Αποτελέσματα Collective Επικοινωνίας}{}% 43
+\BOOKMARK [1][-]{section.4.1}{Scatter}{chapter.4}% 44
+\BOOKMARK [1][-]{section.4.2}{Broadcast}{chapter.4}% 45
+\BOOKMARK [1][-]{section.4.3}{Αllreduce}{chapter.4}% 46
+\BOOKMARK [1][-]{section.4.4}{Συγκεντρωτικά Αποτελέσματα για τα υπόλοιπα collectives}{chapter.4}% 47
+\BOOKMARK [1][-]{section.4.5}{Αποτελέσματα εφαρμογής LULESH}{chapter.4}% 48
+\BOOKMARK [2][-]{subsection.4.5.1}{Αρχιτεκτονική UMA}{section.4.5}% 49
+\BOOKMARK [2][-]{subsection.4.5.2}{Αρχιτεκτονική NUMA}{section.4.5}% 50
+\BOOKMARK [1][-]{section.4.6}{Σύγκριση αποτελεσμάτων με βάση την απεικόνιση των διεργασιών στους πόρους}{chapter.4}% 51
+\BOOKMARK [0][-]{chapter.5}{Συμπεράσματα και Μελλοντικές Επεκτάσεις }{}% 52

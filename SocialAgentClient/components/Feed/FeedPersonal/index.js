@@ -151,7 +151,6 @@ export default class FeedPersonal extends Component {
     return;
   }
 
-
   componentWillMount(){
       this._refreshFeedData();
       return

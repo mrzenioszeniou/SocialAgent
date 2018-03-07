@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>urls.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #999999; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(0,128,0); font-weight: bold; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+urls.py</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<a name="l1"><span class="ln">1    </span></a><span class="s0">from </span><span class="s1">django.conf </span><span class="s0">import </span><span class="s1">settings 
+<a name="l2"><span class="ln">2    </span></a></span><span class="s0">from </span><span class="s1">django.conf.urls </span><span class="s0">import </span><span class="s1">url, include 
+<a name="l3"><span class="ln">3    </span></a></span><span class="s0">from </span><span class="s1">django.conf.urls.static </span><span class="s0">import </span><span class="s1">static 
+<a name="l4"><span class="ln">4    </span></a></span><span class="s0">from </span><span class="s1">api </span><span class="s0">import </span><span class="s1">views 
+<a name="l5"><span class="ln">5    </span></a></span><span class="s0">from </span><span class="s1">rest_framework.routers </span><span class="s0">import </span><span class="s1">DefaultRouter 
+<a name="l6"><span class="ln">6    </span></a></span><span class="s0">from </span><span class="s1">rest_framework.authtoken </span><span class="s0">import </span><span class="s1">views </span><span class="s0">as </span><span class="s1">auth_views 
+<a name="l7"><span class="ln">7    </span></a> 
+<a name="l8"><span class="ln">8    </span></a>router = DefaultRouter() 
+<a name="l9"><span class="ln">9    </span></a>router.register(</span><span class="s2">r'activities'</span><span class="s1">, views.ActivityViewSet) 
+<a name="l10"><span class="ln">10   </span></a>router.register(</span><span class="s2">r'users'</span><span class="s1">, views.UserViewSet) 
+<a name="l11"><span class="ln">11   </span></a>router.register(</span><span class="s2">r'activityfollows'</span><span class="s1">, views.ActivityFollowViewSet) 
+<a name="l12"><span class="ln">12   </span></a>router.register(</span><span class="s2">r'follows'</span><span class="s1">, views.FollowViewSet) 
+<a name="l13"><span class="ln">13   </span></a>router.register(</span><span class="s2">r'feed'</span><span class="s1">, views.FeedViewSet) 
+<a name="l14"><span class="ln">14   </span></a>router.register(</span><span class="s2">r'reactions'</span><span class="s1">, views.ReactionViewSet) 
+<a name="l15"><span class="ln">15   </span></a> 
+<a name="l16"><span class="ln">16   </span></a>urlpatterns = [ 
+<a name="l17"><span class="ln">17   </span></a>    url(</span><span class="s2">r'^'</span><span class="s1">, include(router.urls)), 
+<a name="l18"><span class="ln">18   </span></a>    url(</span><span class="s2">r'^me/'</span><span class="s1">, views.CurrentUserView.as_view({</span><span class="s2">'get'</span><span class="s1">:</span><span class="s2">'get'</span><span class="s1">,</span><span class="s2">'patch'</span><span class="s1">:</span><span class="s2">'patch'</span><span class="s1">,</span><span class="s2">'post'</span><span class="s1">:</span><span class="s2">'create'</span><span class="s1">})), 
+<a name="l19"><span class="ln">19   </span></a>    url(</span><span class="s2">r'^token/'</span><span class="s1">, auth_views.obtain_auth_token), 
+<a name="l20"><span class="ln">20   </span></a>] 
+<a name="l21"><span class="ln">21   </span></a> 
+<a name="l22"><span class="ln">22   </span></a>urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
+<a name="l23"><span class="ln">23   </span></a>urlpatterns +=  static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) 
+<a name="l24"><span class="ln">24   </span></a> 
+<a name="l25"><span class="ln">25   </span></a></span></pre>
+</body>
+</html>

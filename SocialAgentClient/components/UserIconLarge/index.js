@@ -17,7 +17,6 @@ export default class UserIconLarge extends Component {
        person: null,
        user: null
     };
-    //this._navigateParent = this._navigateParent.bind(this);
   }
 
   async componentWillMount(){
@@ -79,6 +78,7 @@ export default class UserIconLarge extends Component {
     }
   }
 }
+
 const styles= StyleSheet.create({
   followerContainer: {
     flexDirection: 'column',

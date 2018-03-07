@@ -1,0 +1,238 @@
+\documentclass[a4paper,twoside,titlepage,11pt]{book}
+\usepackage[cm-default]{fontspec}
+
+%ams packages for aling enviroment
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[bottom]{footmisc}
+%headers
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{2pt}
+
+%footnote counter reset per page
+\usepackage{perpage} %the perpage package
+\MakePerPage{footnote} %the perpage package command
+
+% internal hyperlinks
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+	\usepackage{multirow}
+\usepackage[top=1in,bottom=1in,left=1.4in,right=1.4in]{geometry}
+
+% Pictures
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+%hyphenation
+%\usepackage{xgreek}
+\usepackage[english,greek]{babel}
+\usepackage{csquotes}
+\renewcommand\thesubfigure{\roman{subfigure}}
+%references
+\usepackage[backend=bibtex,sorting=none]{biblatex}
+\addbibresource{./chapters/references.bib}
+\begin{document}
+\title{
+\vspace{-6ex}
+\begin{center}
+\includegraphics[scale=0.15]{logo.png}
+\end{center}
+\Large{Ε}\large{ΘΝΙΚΟ}
+\Large{Μ}\large{ΕΤΣΟΒΙΟ}
+\Large{Π}\large{ΟΛΥΤΕΧΝΕΙΟ} \\
+\normalsize{Τ}\small{ΜΗΜΑ}
+\normalsize{Η}\small{ΛΕΚΤΡΟΛΟΓΩΝ}
+\normalsize{Μ}\small{ΗΧΑΝΙΚΩΝ}
+\normalsize{Κ}\small{ΑΙ}
+\normalsize{Μ}\small{ΗΧΑΝΙΚΩΝ}
+\normalsize{Υ}\small{ΠΟΛΟΓΙΣΤΩΝ} \\
+\vspace{2ex}
+ΤΟΜΕΑΣ ΤΕΧΝΟΛΟΓΙΑΣ ΠΛΗΡΟΦΟΡΙΚΗΣ ΚΑΙ ΥΠΟΛΟΓΙΣΤΩΝ \\
+ΕΡΓΑΣΤΗΡΙΟ ΥΠΟΛΟΓΙΣΤΙΚΩΝ ΣΥΣΤΗΜΑΤΩΝ \\
+\vspace{8ex}
+\large \textbf{Πρόβλεψη χρόνου επικοινωνίας παράλληλων εφαρμογών σε αρχιτεκτονικές κοινού χώρου διευθύνσεων} \\
+\vspace{10ex}
+\large
+ΔΙΠΛΩΜΑΤΙΚΗ ΕΡΓΑΣΙΑ \\
+\vspace{2ex}
+\normalsize
+του \\
+\vspace{2ex}
+\parbox[c]{0.8\textwidth} { \center\textbf{
+Παναγιώτη Χ. Μουλλωτού }}
+\vspace{10ex}
+\flushleft	
+\begin{tabbing}
+	\textbf{Επιβλέπων}: \= Γεώργιος Ι. Γκούμας \\
+			    \> Λέκτορας
+\end{tabbing}
+}
+\date{
+\normalsize
+Αθήνα, Ιούλιος 2016}
+
+\maketitle
+\pagestyle{empty}
+\newpage
+\frontmatter
+
+\hspace{10pt}
+%\tiny
+%(this page is left intentionally blanc)
+%\normalsize
+%\newpage
+\frontmatter
+\setcounter{page}{1}
+\pagestyle{plain}
+\hspace{10pt}
+\begin{center}
+\includegraphics[scale=0.15]{logo.png}
+
+\Large{Ε}\large{ΘΝΙΚΟ}
+\Large{Μ}\large{ΕΤΣΟΒΙΟ}
+\Large{Π}\large{ΟΛΥΤΕΧΝΕΙΟ} \\
+\normalsize{Τ}\small{ΜΗΜΑ}
+\normalsize{Η}\small{ΛΕΚΤΡΟΛΟΓΩΝ}
+\normalsize{Μ}\small{ΗΧΑΝΙΚΩΝ}
+\normalsize{Κ}\small{ΑΙ}
+\normalsize{Μ}\small{ΗΧΑΝΙΚΩΝ}
+\normalsize{Υ}\small{ΠΟΛΟΓΙΣΤΩΝ} \\
+\vspace{2ex}
+ΤΟΜΕΑΣ ΤΕΧΝΟΛΟΓΙΑΣ ΠΛΗΡΟΦΟΡΙΚΗΣ ΚΑΙ ΥΠΟΛΟΓΙΣΤΩΝ \\
+ΕΡΓΑΣΤΗΡΙΟ ΥΠΟΛΟΓΙΣΤΙΚΩΝ ΣΥΣΤΗΜΑΤΩΝ \\
+\end{center}
+\begin{center}
+\vspace{8ex}
+\large \textbf{Πρόβλεψη χρόνου επικοινωνίας παράλληλων εφαρμογών σε αρχιτεκτονικές κοινού χώρου διευθύνσεων} \\
+\vspace{10ex}
+\large
+ΔΙΠΛΩΜΑΤΙΚΗ ΕΡΓΑΣΙΑ \\
+\vspace{2ex}
+\normalsize
+του\\
+\vspace{2ex}
+\parbox[c]{0.8\textwidth} { \center\textbf{
+Παναγιώτη Χ. Μουλλωτού }}
+\vspace{10ex}
+\flushleft
+\begin{tabbing}
+	\textbf{Επιβλέπων}: \= Γεώργιος Ι. Γκούμας \\
+			    \> Λέκτορας
+\end{tabbing}
+\end{center}
+
+\noindent
+Εγκρίθηκε από την τριμελή εξεταστική επιτροπή την 20$^\eta$ Ιουλίου 2016.\\[1cm]
+
+\begin{center}
+\scriptsize
+\parbox[b]{0.3\textwidth} {\center
+	........................................
+	Γεώργιος Γκούμας\\
+	Λέκτορας
+}
+\parbox[b]{0.3\textwidth} {\center
+	........................................
+	Νεκτάριος Κοζύρης\\
+	Καθηγητής
+}
+\parbox[b]{0.3\textwidth} {\center
+	........................................
+	Παναγιώτης Τσανάκας\\
+	Καθηγητής
+}
+\end{center}
+\vspace{10ex}
+\normalsize
+\noindent
+\begin{center}
+Αθήνα, Ιούλιος 2016.
+\end{center}
+\newpage
+\hspace{10pt}
+
+\vspace{20ex}
+	\noindent
+................................... \\
+\textbf{Παναγιώτης Χ. Μουλλωτού} \\
+Διπλωματούχος Ηλεκτρολόγος Μηχανικός και Μηχανικός Υπολογιστών Ε.Μ.Π. \\
+
+\vspace*{\fill}
+\noindent Copyright\textcopyright \quad  Παναγιώτης Μουλλωτού, 2016\\
+Με επιφύλαξη παντός δικαιώματος. All rights reserved.
+\paragraph{}
+Απαγορεύεται η αντιγραφή, αποθήκευση και διανομή της παρούσας εργασίας, εξ' ολοκλήρου ή τμήματος αυτής, για εμπορικό σκοπό. Επιτρέπεται η  ανατύπωση, αποθήκευση και διανομή για σκοπό μη κερδοσκοπικό, εκπαιδευτικής ή ερευνητικής φύσης, υπό την προϋπόθεση να αναφέρεται η πηγή προέλευσης και να διατηρείται το παρόν μήνυμα. Ερωτήματα που αφορούν τη χρήση της εργασίας για κερδοσκοπικό σκοπό πρέπει να απευθύνονται προς το συγγραφέα.
+\paragraph{}
+Οι απόψεις και τα συμπεράσματα που περιέχονται σε αυτό το έγγραφο εκφράζουν τον συγγραφέα και δεν πρέπει να ερμηνευθεί ότι αντιπροσωπεύουν τις επίσημες θέσεις του Εθνικού Μετσόβιου Πολυτεχνείου.  
+\newpage
+
+
+\section*{\centering Περίληψη}
+\addcontentsline{toc}{chapter}{Περίληψη}
+Με τη δουλειά μας, παρουσιάζουμε μία μεθοδολογία για την πρόβλεψη του χρόνου επικοινωνίας παράλληλων εφαρμογών σε αρχιτεκτονικές κοινής μνήμης βασιζόμενοι σε τεχνικές μηχανικής μάθησης, για σημείο-προς-σημείο αλλά και συλλογική επικοινωνία, που παρέχει το προγραμματιστικό μοντέλο ανταλλαγής μηνυμάτων, MPI.  Χρησιμοποιούμε διάφορα benchmarks για την εξαγωγή ενός συνόλου με σημεία-παραδείγματα. Κάθε σημείο περιέχει κάποια χαρακτηριστικά που αποτυπώνουν την επικοινωνία που λαμβάνει χώρα και το χρόνο επικοινωνίας που δαπανήθηκε. Μετέπειτα, στηριζόμενοι στα σημεία επικοινωνίας που εξάγαμε, εκπαιδεύουμε τα μοντέλα με αλγόριθμους επιτηρούμενης μάθησης και αξιολογούμε τη συμπεριφορά τους για διάφορα σύνολα δειγμάτων εκπαίδευσης, με τη βοήθεια δύο MPI εφαρμογών, Jacobi και LULESH, και διάφορων μετρικών αξιολόγησης. Τελικά, τα αποτελέσματα για επικοινωνία σημείο-προς-σημείο παρουσιάζουν αξιοσημείωτη ακρίβεια με τουλάχιστον 75\%  των περιπτώσεων που προβλέπουμε να έχουν απόλυτο σχετικό σφάλμα μικρότερο από 30\% για όλες τις αρχιτεκτονικές που εξετάσαμε. Αντίστοιχης κλίμακας ακρίβεια παρουσιάζουν οι προβλέψεις συλλογικής επικοινωνίας. Επιπρόσθετα,  πέραν των προβλέψεων, αναλύουμε τις προκλήσεις που εμφανίζει η μελέτη της συλλογικής επικοινωνίας.
+
+\vspace*{\fill}
+\textbf{Λέξεις-κλειδιά:} χρόνος επικοινωνίας, MPI εφαρμογές, αρχιτεκτονικές κοινής μνήμης, μηχανική μάθηση
+\newpage
+
+\section*{\centering Abstract}
+
+\addcontentsline{toc}{chapter}{Abstract}
+\selectlanguage{english}
+In this paper, we represent a  methodology aiming to predict the time consumed by parallel applications for communication purposes, based on machine learning technics, applicable for point-to-point and collective MPI operations. We use several benchmarks in order to extract a training set containing samples. Each sample is formed by a number of features, grasping the communication that took place during the benchmarks' execution, followed by the time consumed. Afterwards, we implement supervised learning algorithms for the models' training and we evaluate their accuracy for two modern MPI applications, Jacobi and LULESH. Finally, point-to-point operations are predicted with noteworthy results by combining the samples extracted from two benchmarks, acheiving absolute relative error below 25\% while scoring higher than 75\% in $Pred_{0.3}$. Moreover, except for making predictions, we analyse the challenges presented by collective operations modeling.
+
+\vspace*{\fill}
+\textbf{Keywords:} communication time, MPI application, shared memory architectures, machine learning,
+\newpage
+\section*{\centering Ευχαριστίες}
+\selectlanguage{greek}
+\addcontentsline{toc}{chapter}{Ευχαριστίες}
+\paragraph{}
+Αρχικά θέλω να ευχαριστήσω τον επιβλέποντα καθηγητή μου κ. Γεώργιο Γκούμα για την ανάθεση αυτής της Διπλωματικής και την βοήθεια που μου έδωσε κατά τη διάρκεια της εκπόνησής της. Πάνω απ΄όλα τον ευχαριστώ γιατί αποτέλεσε τον κύριο λόγο για να ασχοληθώ με την επιστήμη υπολογιστών και τα παράλληλα συστήματα.
+\paragraph{}
+Ένα μεγάλο ευχαριστώ οφείλω στην υποψήφια διδάκτορα Νικέλα Παπαδοπούλου. Η συνδρομή της ήταν καθοριστική στην ολοκλήρωση της διπλωματικής αυτής, παρέχοντας γνώση, καθοδήγηση και εμπιστοσύνη, με άψογη συνεργασία αυτούς τους τελευταίους μήνες.
+\paragraph{}
+Επιπλέον, θέλω να ευχαριστήσω τους φίλους και συμφοιτητές μου, για τη βοήθεια και στήριξη που μου παρείχαν στα πέντε χρόνια φοίτησης μου στο Πολυτεχνείο.
+\paragraph{}
+Τέλος, δεν μπορώ να βρω τις λέξεις για να εκφράσω την ευγνωμοσύνη μου προς τους γονείς μου. Η εμπιστοσύνη και η αλτρουιστική στήριξη τους είναι πραγματικά συγκινητική. Η διπλωματική αυτή είναι αφιερωμένη σε αυτούς.
+
+
+\newpage
+\tableofcontents
+{\small\listoffigures}
+\mainmatter{
+\pagenumbering{arabic}
+
+\pagestyle{fancy}
+\fancyhf{}
+%\cfoot{\thepage}
+\fancyfoot[LE,RO]{\thepage}
+\chapter{Εισαγωγή}
+\fancyhead[RE,LO]{Εισαγωγή}
+\input{chapters/introduction}
+\chapter{Μοντελοποίηση}
+\fancyhead[RE,LO]{Μοντελοποίηση}
+\input{chapters/modeling}
+\chapter{Πειραματικά Αποτελέσματα Non-Blocking Επικοινωνίας}
+\fancyhead[RE,LO]{Πειραματικά Αποτελέσματα Non-Blocking Επικοινωνίας}
+\input{chapters/nonblocking}
+\chapter{Πειραματικά Αποτελέσματα Collective Επικοινωνίας}
+\fancyhead[RE,LO]{Πειραματικά Αποτελέσματα Collective Επικοινωνίας}
+\input{chapters/collective}
+\chapter{Συμπεράσματα και Μελλοντικές Επεκτάσεις }
+\fancyhead[RE,LO]{Συμπεράσματα και Μελλοντικές Επεκτάσεις}
+\input{chapters/mellontikes}
+
+}
+%\selectlanguage{english}
+\printbibliography
+\end{document}

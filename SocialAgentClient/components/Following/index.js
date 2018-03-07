@@ -12,7 +12,6 @@ import {
 } from 'react-native';
 import UserIcon from '../UserIcon/';
 
-
 export default class Following extends Component  {
 
   constructor(props){
@@ -75,10 +74,7 @@ export default class Following extends Component  {
         </View>
       );
     }
-
-
   }
-
 }
 
 const styles= StyleSheet.create({

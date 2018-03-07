@@ -1,0 +1,138 @@
+<html>
+<head>
+<title>views.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #999999; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(0,128,0); font-weight: bold; }
+.s3 { color: rgb(128,128,128); font-style: italic; }
+.s4 { color: rgb(0,0,255); }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+views.py</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<a name="l1"><span class="ln">1    </span></a><span class="s0">from </span><span class="s1">api.models </span><span class="s0">import </span><span class="s1">* 
+<a name="l2"><span class="ln">2    </span></a></span><span class="s0">from </span><span class="s1">api.serializers </span><span class="s0">import </span><span class="s1">* 
+<a name="l3"><span class="ln">3    </span></a></span><span class="s0">from </span><span class="s1">rest_framework </span><span class="s0">import </span><span class="s1">viewsets, status, mixins, generics 
+<a name="l4"><span class="ln">4    </span></a></span><span class="s0">from </span><span class="s1">rest_framework.response </span><span class="s0">import </span><span class="s1">Response 
+<a name="l5"><span class="ln">5    </span></a></span><span class="s0">from </span><span class="s1">rest_framework.permissions </span><span class="s0">import </span><span class="s1">AllowAny 
+<a name="l6"><span class="ln">6    </span></a></span><span class="s0">from </span><span class="s1">custom </span><span class="s0">import </span><span class="s1">getDistanceFromLatLonInKm, getAgeFromDateOfBirth 
+<a name="l7"><span class="ln">7    </span></a> 
+<a name="l8"><span class="ln">8    </span></a> 
+<a name="l9"><span class="ln">9    </span></a></span><span class="s0">class </span><span class="s1">ActivityViewSet(viewsets.ReadOnlyModelViewSet): 
+<a name="l10"><span class="ln">10   </span></a>    queryset = Activity.objects.all() 
+<a name="l11"><span class="ln">11   </span></a>    serializer_class = ActivitySerializer 
+<a name="l12"><span class="ln">12   </span></a> 
+<a name="l13"><span class="ln">13   </span></a>    </span><span class="s0">def </span><span class="s1">list(self, request, *args, **kwargs): 
+<a name="l14"><span class="ln">14   </span></a>        </span><span class="s0">if </span><span class="s1">request.auth: 
+<a name="l15"><span class="ln">15   </span></a>            user = request.user 
+<a name="l16"><span class="ln">16   </span></a>            queryset = Activity.objects.exclude(followed=user) 
+<a name="l17"><span class="ln">17   </span></a>        </span><span class="s0">else</span><span class="s1">: 
+<a name="l18"><span class="ln">18   </span></a>            queryset = Activity.objects.all() 
+<a name="l19"><span class="ln">19   </span></a>        serializer = ActivitySerializer(queryset,context={</span><span class="s2">'request'</span><span class="s1">:request},many=True) 
+<a name="l20"><span class="ln">20   </span></a>        </span><span class="s0">return </span><span class="s1">Response(serializer.data) 
+<a name="l21"><span class="ln">21   </span></a> 
+<a name="l22"><span class="ln">22   </span></a> 
+<a name="l23"><span class="ln">23   </span></a></span><span class="s0">class </span><span class="s1">UserViewSet(viewsets.ReadOnlyModelViewSet): 
+<a name="l24"><span class="ln">24   </span></a>    queryset = User.objects.exclude(username=</span><span class="s2">'admin'</span><span class="s1">) 
+<a name="l25"><span class="ln">25   </span></a>    serializer_class = UserSerializer 
+<a name="l26"><span class="ln">26   </span></a> 
+<a name="l27"><span class="ln">27   </span></a>    </span><span class="s0">def </span><span class="s1">list(self, request, *args, **kwargs): 
+<a name="l28"><span class="ln">28   </span></a>        </span><span class="s0">if </span><span class="s1">request.auth: 
+<a name="l29"><span class="ln">29   </span></a>            user = request.user 
+<a name="l30"><span class="ln">30   </span></a>            </span><span class="s0">if </span><span class="s1">user.discoverable: 
+<a name="l31"><span class="ln">31   </span></a>                queryset = [ u </span><span class="s0">for </span><span class="s1">u </span><span class="s0">in </span><span class="s1">User.objects.exclude(username__in=[</span><span class="s2">'admin'</span><span class="s1">,user.username]).exclude(followers=user) 
+<a name="l32"><span class="ln">32   </span></a>                    </span><span class="s0">if </span><span class="s1">getDistanceFromLatLonInKm(user.latitude,user.longitude,u.latitude,u.longitude) &lt;= user.discover_distance 
+<a name="l33"><span class="ln">33   </span></a>                    </span><span class="s0">and </span><span class="s1">getDistanceFromLatLonInKm(user.latitude,user.longitude,u.latitude,u.longitude) &lt;= u.discover_distance 
+<a name="l34"><span class="ln">34   </span></a>                     </span><span class="s0">and </span><span class="s1">u.discoverable </span><span class="s0">and </span><span class="s1">(user.discover_age_min &lt;= getAgeFromDateOfBirth(u.dateOfBirth) &lt;= user.discover_age_max)] 
+<a name="l35"><span class="ln">35   </span></a>            </span><span class="s0">else</span><span class="s1">: 
+<a name="l36"><span class="ln">36   </span></a>                queryset = [] 
+<a name="l37"><span class="ln">37   </span></a>        </span><span class="s0">else</span><span class="s1">: 
+<a name="l38"><span class="ln">38   </span></a>            queryset = User.objects.exclude(username=</span><span class="s2">'admin'</span><span class="s1">) 
+<a name="l39"><span class="ln">39   </span></a>        serializer = UserSerializer(queryset,context={</span><span class="s2">'request'</span><span class="s1">: request}, many=True) 
+<a name="l40"><span class="ln">40   </span></a>        </span><span class="s0">return </span><span class="s1">Response(serializer.data) 
+<a name="l41"><span class="ln">41   </span></a> 
+<a name="l42"><span class="ln">42   </span></a> 
+<a name="l43"><span class="ln">43   </span></a></span><span class="s0">class </span><span class="s1">ReactionViewSet(mixins.RetrieveModelMixin, mixins.DestroyModelMixin, mixins.CreateModelMixin, viewsets.GenericViewSet): 
+<a name="l44"><span class="ln">44   </span></a>    queryset = Reaction.objects.all() 
+<a name="l45"><span class="ln">45   </span></a>    serializer_class = ReactionSerializer 
+<a name="l46"><span class="ln">46   </span></a> 
+<a name="l47"><span class="ln">47   </span></a> 
+<a name="l48"><span class="ln">48   </span></a></span><span class="s0">class </span><span class="s1">ActivityFollowViewSet(mixins.RetrieveModelMixin, mixins.DestroyModelMixin, mixins.CreateModelMixin, viewsets.GenericViewSet): 
+<a name="l49"><span class="ln">49   </span></a>    queryset = ActivityFollow.objects.all() 
+<a name="l50"><span class="ln">50   </span></a>    serializer_class = ActivityFollowSerializer 
+<a name="l51"><span class="ln">51   </span></a> 
+<a name="l52"><span class="ln">52   </span></a> 
+<a name="l53"><span class="ln">53   </span></a></span><span class="s0">class </span><span class="s1">FollowViewSet(mixins.RetrieveModelMixin, mixins.DestroyModelMixin, mixins.CreateModelMixin, viewsets.GenericViewSet): 
+<a name="l54"><span class="ln">54   </span></a>    queryset = Follow.objects.all() 
+<a name="l55"><span class="ln">55   </span></a>    serializer_class = FollowSerializer 
+<a name="l56"><span class="ln">56   </span></a> 
+<a name="l57"><span class="ln">57   </span></a> 
+<a name="l58"><span class="ln">58   </span></a></span><span class="s0">class </span><span class="s1">FeedViewSet(viewsets.ModelViewSet): 
+<a name="l59"><span class="ln">59   </span></a>    queryset = Feed.objects.all() 
+<a name="l60"><span class="ln">60   </span></a>    serializer_class = FeedSerializer 
+<a name="l61"><span class="ln">61   </span></a> 
+<a name="l62"><span class="ln">62   </span></a>    </span><span class="s0">def </span><span class="s1">list(self, request, *args, **kwargs): 
+<a name="l63"><span class="ln">63   </span></a>        </span><span class="s0">if </span><span class="s1">request.auth: 
+<a name="l64"><span class="ln">64   </span></a>            user = request.user 
+<a name="l65"><span class="ln">65   </span></a>            </span><span class="s0">if </span><span class="s1">user.online: 
+<a name="l66"><span class="ln">66   </span></a>                </span><span class="s3"># The first commented line represents normal functionality. For testing purposes we ignore some functionality</span><span class="s1"> 
+<a name="l67"><span class="ln">67   </span></a>                </span><span class="s3"># queryset = [f for f in Feed.objects.all() if ((f.user in user.following.all() and f.user in user.followers.all() and f.user.online) or f.user == user)]</span><span class="s1"> 
+<a name="l68"><span class="ln">68   </span></a>                queryset = [f </span><span class="s0">for </span><span class="s1">f </span><span class="s0">in </span><span class="s1">Feed.objects.all() </span><span class="s0">if </span><span class="s1">((f.user </span><span class="s0">in </span><span class="s1">user.following.all() </span><span class="s0">and </span><span class="s1">f.user.online) </span><span class="s0">or </span><span class="s1">f.user == user)] 
+<a name="l69"><span class="ln">69   </span></a>            </span><span class="s0">else</span><span class="s1">: 
+<a name="l70"><span class="ln">70   </span></a>                queryset = [f </span><span class="s0">for </span><span class="s1">f </span><span class="s0">in </span><span class="s1">Feed.objects.all() </span><span class="s0">if </span><span class="s1">f.user == user] 
+<a name="l71"><span class="ln">71   </span></a>        </span><span class="s0">else</span><span class="s1">: 
+<a name="l72"><span class="ln">72   </span></a>            queryset = Feed.objects.all() 
+<a name="l73"><span class="ln">73   </span></a>        </span><span class="s0">if </span><span class="s1">len(queryset) &gt; </span><span class="s4">20</span><span class="s1">: 
+<a name="l74"><span class="ln">74   </span></a>            queryset = queryset[</span><span class="s4">0</span><span class="s1">:</span><span class="s4">20</span><span class="s1">] 
+<a name="l75"><span class="ln">75   </span></a>        serializer = FeedSerializer(queryset, context={</span><span class="s2">'request'</span><span class="s1">: request}, many=True) 
+<a name="l76"><span class="ln">76   </span></a>        </span><span class="s0">return </span><span class="s1">Response(serializer.data) 
+<a name="l77"><span class="ln">77   </span></a> 
+<a name="l78"><span class="ln">78   </span></a> 
+<a name="l79"><span class="ln">79   </span></a></span><span class="s0">class </span><span class="s1">CurrentUserView(mixins.CreateModelMixin, generics.GenericAPIView,viewsets.ViewSet): 
+<a name="l80"><span class="ln">80   </span></a>    queryset = User.objects.all() 
+<a name="l81"><span class="ln">81   </span></a>    serializer_class = CurrentUserSerializer 
+<a name="l82"><span class="ln">82   </span></a>    permission_classes = (AllowAny,) 
+<a name="l83"><span class="ln">83   </span></a>     
+<a name="l84"><span class="ln">84   </span></a>    </span><span class="s0">def </span><span class="s1">get(self, request): 
+<a name="l85"><span class="ln">85   </span></a>        </span><span class="s0">if </span><span class="s1">request.auth: 
+<a name="l86"><span class="ln">86   </span></a>            user = request.user 
+<a name="l87"><span class="ln">87   </span></a>            serializer = CurrentUserSerializer(user, context={</span><span class="s2">'request'</span><span class="s1">: request}) 
+<a name="l88"><span class="ln">88   </span></a>            </span><span class="s0">return </span><span class="s1">Response(serializer.data, status=status.HTTP_200_OK,) 
+<a name="l89"><span class="ln">89   </span></a>        </span><span class="s0">else</span><span class="s1">: 
+<a name="l90"><span class="ln">90   </span></a>            body = { 
+<a name="l91"><span class="ln">91   </span></a>                </span><span class="s2">&quot;detail&quot; </span><span class="s1">: </span><span class="s2">&quot;Authentication credentials were not provided.&quot;</span><span class="s1">, 
+<a name="l92"><span class="ln">92   </span></a>                </span><span class="s2">&quot;help&quot; </span><span class="s1">: </span><span class="s2">&quot;Provide 'Authorization: Token 9944b09199c62bcf9418ad846dd0e4bbdfc6ee4b' header.&quot;</span><span class="s1"> 
+<a name="l93"><span class="ln">93   </span></a>            } 
+<a name="l94"><span class="ln">94   </span></a>            </span><span class="s0">return </span><span class="s1">Response(body, status=status.HTTP_401_UNAUTHORIZED) 
+<a name="l95"><span class="ln">95   </span></a> 
+<a name="l96"><span class="ln">96   </span></a>    </span><span class="s0">def </span><span class="s1">patch(self, request): 
+<a name="l97"><span class="ln">97   </span></a>        </span><span class="s0">if </span><span class="s1">request.auth: 
+<a name="l98"><span class="ln">98   </span></a>            user = request.user 
+<a name="l99"><span class="ln">99   </span></a>            </span><span class="s0">for </span><span class="s1">attr,value </span><span class="s0">in </span><span class="s1">request.data.iteritems(): 
+<a name="l100"><span class="ln">100  </span></a>                setattr(user,attr,value) 
+<a name="l101"><span class="ln">101  </span></a>            user.save() 
+<a name="l102"><span class="ln">102  </span></a>            serializer = CurrentUserSerializer(user, context={</span><span class="s2">'request'</span><span class="s1">: request}) 
+<a name="l103"><span class="ln">103  </span></a>            </span><span class="s0">return </span><span class="s1">Response(serializer.data, status=status.HTTP_200_OK,) 
+<a name="l104"><span class="ln">104  </span></a>        </span><span class="s0">else</span><span class="s1">: 
+<a name="l105"><span class="ln">105  </span></a>            body = { 
+<a name="l106"><span class="ln">106  </span></a>                </span><span class="s2">&quot;detail&quot; </span><span class="s1">: </span><span class="s2">&quot;Authentication credentials were not provided.&quot;</span><span class="s1">, 
+<a name="l107"><span class="ln">107  </span></a>                </span><span class="s2">&quot;help&quot; </span><span class="s1">: </span><span class="s2">&quot;Provide 'Authorization: Token 9944b09199c62bcf9418ad846dd0e4bbdfc6ee4b' header.&quot;</span><span class="s1"> 
+<a name="l108"><span class="ln">108  </span></a>            } 
+<a name="l109"><span class="ln">109  </span></a>            </span><span class="s0">return </span><span class="s1">Response(body, status=status.HTTP_401_UNAUTHORIZED) 
+<a name="l110"><span class="ln">110  </span></a> 
+<a name="l111"><span class="ln">111  </span></a>    </span><span class="s0">def </span><span class="s1">perform_create(self, serializer): 
+<a name="l112"><span class="ln">112  </span></a>        instance = serializer.save() 
+<a name="l113"><span class="ln">113  </span></a>        instance.set_password(instance.password) 
+<a name="l114"><span class="ln">114  </span></a>        instance.save() 
+<a name="l115"><span class="ln">115  </span></a> 
+<a name="l116"><span class="ln">116  </span></a></span></pre>
+</body>
+</html>

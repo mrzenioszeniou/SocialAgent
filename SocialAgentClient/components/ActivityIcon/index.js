@@ -8,8 +8,6 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-
-
 export default class ActivityIcon extends Component {
 
   constructor(props){

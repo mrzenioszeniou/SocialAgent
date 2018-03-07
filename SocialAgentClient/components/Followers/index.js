@@ -12,7 +12,6 @@ import {
 } from 'react-native';
 import UserIcon from '../UserIcon/';
 
-
 export default class Followers extends Component  {
 
   constructor(props){

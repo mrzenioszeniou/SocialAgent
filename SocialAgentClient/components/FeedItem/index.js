@@ -276,8 +276,6 @@ export default class FeedItem extends Component {
         </View>
       );
     }
-
-
   }
 }
 

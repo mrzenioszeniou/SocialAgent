@@ -14,8 +14,6 @@ import {
   View,
 } from 'react-native';
 
-
-
 export default class Main extends Component {
 
   constructor(props){
@@ -93,13 +91,10 @@ export default class Main extends Component {
       console.error(error);
     }
     return;
-
   }
 
   selectAvatar(){
     var ImagePicker = require('react-native-image-picker');
-
-    // More info on all the options is below in the README...just some common use cases shown here
     var options = {
       title: 'Select Avatar',
       storageOptions: {
@@ -107,14 +102,8 @@ export default class Main extends Component {
         path: 'images'
       }
     };
-
-    /**
-     * The first arg is the options object for customization (it can also be null or omitted for default options),
-     * The second arg is the callback which sends object: response (more info below in README)
-     */
     ImagePicker.showImagePicker(options, (response) => {
       console.log('Response = ', response);
-
       if (response.didCancel) {
         console.log('User cancelled image picker');
       }
@@ -136,8 +125,6 @@ export default class Main extends Component {
       }
     });
   }
-
-
 
   componentDidMount() {
     this.props.navigation.setParams({ updatePersonalInfo: this.updatePersonalInfo });

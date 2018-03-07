@@ -28,4 +28,3 @@ def addActivitiesFromCsv(filename):
 def getAgeFromDateOfBirth(dateOfBirth):
     return (datetime.datetime.now().date() - dateOfBirth).days // 365.25
 
-

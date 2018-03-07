@@ -36,7 +36,6 @@ export default class Home extends Component {
   }
 
   render() {
-
     if(this.state.pageDidMount){
       const StackNav = StackNavigator({
           Main: {

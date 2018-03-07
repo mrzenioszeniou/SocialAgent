@@ -41,7 +41,6 @@ export default class Comment extends Component {
         user: await response.json()
       });
     }
-
   }
 
   render(){

@@ -225,7 +225,6 @@ export default class FeedComposer extends Component {
                 <Text style={styles.picturePromptText}>Attach a picture..</Text>
               </View>
             }
-
             { this.state.picture &&
               <Image style={styles.picture} resizeMode={'contain'} source={{uri: this.state.picture.uri}}/>
             }

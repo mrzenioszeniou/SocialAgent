@@ -1,0 +1,97 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {greek}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\select@language {greek}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Αναπαράσταση συστημάτων κοινής και κατανεμημένης μνήμης\relax }}{1}{figure.caption.13}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Κατηγορίες Αρχιτεκτονικών Κοινής Μνήμης\relax }}{2}{figure.caption.15}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Thoughtput για το IMB PingPong Benchmark\relax }}{5}{figure.caption.30}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Συγκριτικό διάγραμμα για τις αρχιτεκτονικές UMA και NUMA για point-to-point επικοινωνία\relax }}{7}{figure.caption.35}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Συγκριτικό διάγραμμα για επικοινωνία σε αρχιτεκτονικές UMA και NUMA για το collective alltoall\relax }}{8}{figure.caption.39}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Αναπαράσταση του μηχανήματος Sandman\relax }}{10}{figure.caption.52}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Πίνακες εισόδου για το benchmark \textit {p2p\_AS}\relax }}{21}{figure.caption.93}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Ανταλλαγή Halo-3D\relax }}{26}{figure.caption.101}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Αποτελέσματα, κατανομή σφάλματος, παράμετροι εκπαίδευσης και μετρικές αξιολόγησης για την εφαρμογή Jacobi-3D σε αρχιτεκτονική UMA με το training set του p2p\_SRR\relax }}{29}{figure.caption.112}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Αποτελέσματα, κατανομή σφάλματος και παράμετροι εκπαίδευσης για την εφαρμογή LULESH σε αρχιτεκτονική UMA με το training set του p2p\_SRR. Οι λεζάντες στον οριζόντιο άξονα των αποτελεσμάτων αντιστοιχούν σε $nodes\_ppn\_$ $domainSize$.\relax }}{29}{figure.caption.115}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Αποτελέσματα, κατανομή σφάλματος, παράμετροι εκπαίδευσης και οι μετρικές αξιολόγησης για την εφαρμογή Jacobi-3D σε αρχιτεκτονική UMA με το training set του p2p\_SRR και του p2p\_AS. \relax }}{30}{figure.caption.117}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Αποτελέσματα, κατανομή σφάλματος, παράμετροι εκπαίδευσης και μετρικές αξιολόγησης για την εφαρμογή LULESH σε αρχιτεκτονική UMA με το training set του p2p\_SRR και του p2p\_AS. Οι λεζάντες στον οριζόντιο άξονα των αποτελεσμάτων αντιστοιχούν σε $nodes\_ppn\_$ $domainSize$.\relax }}{31}{figure.caption.120}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Αποτελέσματα, κατανομή σφάλματος, παράμετροι εκπαίδευσης και μετρικές αξιολόγησης για την εφαρμογή Jacobi-3D σε αρχιτεκτονική UMA με ρητή επιλογή παραμέτρων\relax }}{32}{figure.caption.123}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Αποτελέσματα, κατανομή σφάλματος, παράμετροι εκπαίδευσης και μετρικές αξιολόγησης για την εφαρμογή LULESH σε αρχιτεκτονική UMA με ρητή επιλογή παραμέτρων. Οι λεζάντες στον οριζόντιο άξονα των αποτελεσμάτων αντιστοιχούν σε $nodes\_ppn\_domainSize$.\relax }}{32}{figure.caption.124}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Αποτελέσματα, κατανομή σφάλματος, παράμετροι εκπαίδευσης και μετρικές αξιολόγησης για την εφαρμογή Jacobi σε αρχιτεκτονική NUMA με το Benchmark p2p\_SRR\relax }}{33}{figure.caption.127}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Αποτελέσματα, κατανομή σφάλματος, παράμετροι εκπαίδευσης και μετρικές αξιολόγησης για την εφαρμογή LULESH σε αρχιτεκτονική NUMA με το Benchmark p2p\_SRR\relax }}{34}{figure.caption.128}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Αποτελέσματα, κατανομή σφάλματος, παράμετροι εκπαίδευσης και μετρικές αξιολόγησης για την εφαρμογή Jacobi σε αρχιτεκτονική NUMA με τα Benchmarks p2p\_SRR και p2p\_AS\relax }}{35}{figure.caption.133}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Αποτελέσματα, κατανομή σφάλματος, παράμετροι εκπαίδευσης και μετρικές αξιολόγησης για την εφαρμογή LULESH σε αρχιτεκτονική NUMA με τα Benchmarks p2p\_SRR και p2p\_AS. Οι λεζάντες στον οριζόντιο άξονα των αποτελεσμάτων αντιστοιχούν σε $nodes\_ppn\_domainSize$.\relax }}{36}{figure.caption.134}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Εναπομείναντα χαρακτηριστικά και τα importances τους\relax }}{36}{figure.caption.135}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Importances για τα δύο training sets\relax }}{37}{figure.caption.137}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Αποτελέσματα, κατανομή σφάλματος, παράμετροι εκπαίδευσης και μετρικές αξιολόγησης για την εφαρμογή Jacobi σε αρχιτεκτονική NUMA με ρητή επιλογή παραμέτρων.\relax }}{38}{figure.caption.140}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Αποτελέσματα, κατανομή σφάλματος, παράμετροι εκπαίδευσης και μετρικές αξιολόγησης για την εφαρμογή LULESH σε αρχιτεκτονική NUMA με ρητή επιλογή παραμέτρων. Οι λεζάντες στον οριζόντιο άξονα των αποτελεσμάτων αντιστοιχούν σε $nodes\_ppn\_domainSize$.\relax }}{38}{figure.caption.141}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Αποτελέσματα scatter για σταθερό μέγεθος μηνύματος σε αρχιτεκτονική UMA\relax }}{42}{figure.caption.151}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Αποτελέσματα scatter για μερικά configurations σε αρχιτεκτονική UMA\relax }}{43}{figure.caption.152}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Αποτελέσματα scatter για μερικά configurations σε αρχιτεκτονική NUMA\relax }}{43}{figure.caption.154}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Αποτελέσματα scatter για σταθερό μέγεθος μηνύματος σε αρχιτεκτονική NUMA\relax }}{44}{figure.caption.155}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Αποτελέσματα broadcast για σταθερό μέγεθος μηνύματος σε αρχιτεκτονική UMA\relax }}{45}{figure.caption.156}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Αποτελέσματα broadcast για μερικά configurations σε αρχιτεκτονική UMA\relax }}{45}{figure.caption.157}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Αποτελέσματα broadcast για σταθερό μέγεθος μηνύματος σε αρχιτεκτονική NUMA\relax }}{46}{figure.caption.158}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Αποτελέσματα broadcast για μερικά configurations σε αρχιτεκτονική NUMA\relax }}{46}{figure.caption.159}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Αποτελέσματα allreduce για σταθερό μέγεθος μηνύματος σε αρχιτεκτονική UMA\relax }}{47}{figure.caption.162}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Αποτελέσματα allreduce για μερικά configurations σε αρχιτεκτονική UMA\relax }}{48}{figure.caption.163}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Αποτελέσματα allreduce για σταθερό μέγεθος μηνύματος σε αρχιτεκτονική NUMA\relax }}{48}{figure.caption.164}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Αποτελέσματα allreduce για μερικά configurations σε αρχιτεκτονική NUMA\relax }}{49}{figure.caption.165}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Αποτελέσματα gather,reduce,allgather και alltoall για αρχιτεκτονική UMA\relax }}{49}{figure.caption.166}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Αποτελέσματα gather,reduce,allgather και alltoall για αρχιτεκτονική UMA\relax }}{50}{figure.caption.167}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Αποτελέσματα, κατανομή σφάλματος, παράμετροι εκπαίδευσης και μετρικές αξιολόγησης για την εφαρμογή LULESH σε αρχιτεκτονική UMA για collective επικοινωνία\relax }}{51}{figure.caption.170}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Αποτελέσματα, κατανομή σφάλματος, παράμετροι εκπαίδευσης και μετρικές αξιολόγησης για την εφαρμογή LULESH σε αρχιτεκτονική NUMA για collective επικοινωνία. \relax }}{52}{figure.caption.171}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Χρόνοι επικοινωνίας για το collective reduce με τη μεταβολή της διεργασίας ρίζας\relax }}{53}{figure.caption.175}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Αποτελέσματα για κατανομή bycore και bynode\relax }}{54}{figure.caption.176}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }

@@ -237,7 +237,6 @@ export default class Main extends Component {
                 </View>
               </ScrollView>
               </View>
-
     );}else{
       return(
         <View style={{alignItems:'center',justifyContent:'center',flex:1,backgroundColor:'#f2f2f2'}}>

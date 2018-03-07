@@ -1,5 +1,4 @@
 from rest_framework import serializers
-from rest_framework.request import Request
 from api.models import *
 
 
@@ -42,8 +41,6 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = User
-        # fields = ('url', 'username', 'first_name', 'last_name', 'avatar', 'dateOfBirth','following','followers',
-        #           'activities')
         fields = ('url', 'username', 'first_name', 'last_name', 'avatar', 'dateOfBirth',
                   'latitude', 'longitude', 'following', 'followers', 'activities')
 
